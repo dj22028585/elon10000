@@ -69,7 +69,14 @@ export default function SunPage() {
           >
             <div className="relative w-full h-48 flex items-center justify-center bg-black/30">
               {sub.image ? (
-                <Image src={sub.image} alt={sub.title} fill className="object-cover" sizes="(max-width: 768px) 50vw, 500px" />
+<Image
+  src={sub.image}
+  alt={sub.title}
+  width={400}
+  height={500}
+  className="w-full h-64 object-contain bg-black/30"
+/>
+
               ) : (
                 <div className="flex items-center justify-center w-full h-full text-2xl text-muted">???</div>
               )}
