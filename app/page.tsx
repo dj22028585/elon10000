@@ -7,7 +7,37 @@ import { ExternalLink, Play, Music, Rocket } from "lucide-react"
 import CosmicBackground from "@/components/cosmic-background" // default import
 import SocialIcons from "@/components/social-icons"           // default import
 
-export default function HomePage() {
+export default function HomePage() 
+  function CollapsiblePlayer({ url }: { url: string }) {
+  const src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(
+    url
+  )}&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false`;
+
+  return (
+    <details className="rounded-lg bg-input/60 p-3 open:shadow-inner">
+      {/* summary가 토글 버튼 역할을 함 */}
+      <summary className="list-none flex items-center justify-center gap-2 cursor-pointer select-none px-3 py-2 rounded-md bg-primary/10 hover:bg-primary/20 transition">
+        <Play className="h-5 w-5" />
+        <span className="font-medium">Play sample</span>
+      </summary>
+
+      <div className="mt-3 rounded-lg overflow-hidden">
+        <iframe
+          title="SoundCloud player"
+          width="100%"
+          height="166"
+          scrolling="no"
+          frameBorder="no"
+          allow="autoplay"
+          loading="lazy"
+          src={src}
+        />
+      </div>
+    </details>
+  );
+}
+
+{
   return (
     <div className="min-h-screen bg-cosmic-gradient relative overflow-hidden">
       <CosmicBackground />
@@ -129,17 +159,9 @@ export default function HomePage() {
                   </p>
 
                   {/* ✅ SoundCloud embed (SUN) */}
-                  <div className="rounded-lg overflow-hidden bg-input">
-                    <iframe
-                      width="100%"
-                      height="166"
-                      scrolling="no"
-                      frameBorder="no"
-                      allow="autoplay"
-                      src={`https://w.soundcloud.com/player/?url=${encodeURIComponent("https://soundcloud.com/2qlev7gnf4pl/little-m/s-DIxyQwsedsz?si=fa38edb33c6f4f1fad055e7848546017&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing")}&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false`}
-                      aria-label="SUN sample on SoundCloud"
-                    />
-                  </div>
+            <CollapsiblePlayer url="https://soundcloud.com/2qlev7gnf4pl/little-m/s-DIxyQwsedsz?si=fa38edb33c6f4f1fad055e7848546017&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" />
+
+
                 </CardContent>
               </Card>
             </Link>
@@ -155,17 +177,8 @@ export default function HomePage() {
                 </p>
 
                 {/* ✅ SoundCloud embed (MER) */}
-                <div className="rounded-lg overflow-hidden bg-input">
-                  <iframe
-                    width="100%"
-                    height="166"
-                    scrolling="no"
-                    frameBorder="no"
-                    allow="autoplay"
-                    src={`https://w.soundcloud.com/player/?url=${encodeURIComponent("https://soundcloud.com/2qlev7gnf4pl/moonlit-whisper?si=62c01721af254260977f1a5192ec4cf1&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing")}&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false`}
-                    aria-label="MER sample on SoundCloud"
-                  />
-                </div>
+              <CollapsiblePlayer url="https://soundcloud.com/2qlev7gnf4pl/moonlit-whisper?si=62c01721af254260977f1a5192ec4cf1&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" />
+
               </CardContent>
             </Card>
 
