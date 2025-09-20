@@ -1,0 +1,434 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color scheme for cosmic ELON:10,000 theme */
+  --background: #000010; /* Deep space black */
+  --foreground: #ffffff; /* White text for readability */
+  --card: #000010; /* Dark cards */
+  --card-foreground: #ffffff; /* White text on cards */
+  --popover: #000010; /* Dark popovers */
+  --popover-foreground: #ffffff; /* White text on popovers */
+  --primary: #00bfff; /* Neon blue primary - main identity */
+  --primary-foreground: #000010; /* Dark text on primary */
+  --secondary: #1e90ff; /* MER (Hip-Hop) Blue Neon */
+  --secondary-foreground: #000010; /* Dark text on secondary */
+  --muted: rgba(255, 255, 255, 0.7); /* Muted white */
+  --muted-foreground: #000010; /* Dark background for muted */
+  --accent: #8a2be2; /* VEN (R&B) Purple Neon */
+  --accent-foreground: #ffffff; /* White text on accent */
+  --destructive: #ff4500; /* SUN (Rock) Red/Orange Neon */
+  --destructive-foreground: #ffffff; /* White text on destructive */
+  --border: rgba(255, 255, 255, 0.1); /* Subtle white border */
+  --input: #1e1e1e; /* Dark input background */
+  --ring: rgba(0, 191, 255, 0.5); /* Neon blue glow */
+
+  /* Added all 10 macro-theme color variables */
+  --sun-rock: #ff4500; /* SUN (Rock) Red/Orange Neon */
+  --mer-hiphop: #1e90ff; /* MER (Hip-Hop) Blue Neon */
+  --ven-rnb: #8a2be2; /* VEN (R&B) Purple Neon */
+  --ear-world: #00ced1; /* EAR (World Music) Sky Blue/Emerald */
+  --ai-edm: #c0c0c0; /* AI (EDM) Metallic Gray */
+  --ai-edm-accent: #adff2f; /* AI (EDM) Neon Lime */
+  --mar-kpop: #ff69b4; /* MAR (K-POP) Pink */
+  --jup-classical: #8b4513; /* JUP (Classical) Brown */
+  --jup-classical-accent: #ffd700; /* JUP (Classical) Gold */
+  --sat-jazz: #f5f5f5; /* SAT (Jazz) White */
+  --sat-jazz-accent: #ffd700; /* SAT (Jazz) Gold accents */
+  --cos-house: #191970; /* COS (House) Navy Blue */
+  --cos-house-accent: #40e0d0; /* COS (House) Turquoise */
+  --you-secret: #2f2f2f; /* YOU (Secret) Dark Gray/Black */
+
+  --chart-1: #00bfff;
+  --chart-2: #1e90ff;
+  --chart-3: #87ceeb;
+  --chart-4: #4169e1;
+  --chart-5: #0000ff;
+  --radius: 0.5rem;
+  --sidebar: #000010;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #00bfff;
+  --sidebar-primary-foreground: #000010;
+  --sidebar-accent: #1e90ff;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: rgba(0, 191, 255, 0.5);
+}
+
+.dark {
+  /* Dark mode uses same cosmic colors */
+  --background: #000010;
+  --foreground: #ffffff;
+  --card: #000010;
+  --card-foreground: #ffffff;
+  --popover: #000010;
+  --popover-foreground: #ffffff;
+  --primary: #00bfff;
+  --primary-foreground: #000010;
+  --secondary: #1e90ff;
+  --secondary-foreground: #000010;
+  --muted: rgba(255, 255, 255, 0.7);
+  --muted-foreground: #000010;
+  --accent: #8a2be2;
+  --accent-foreground: #ffffff;
+  --destructive: #ff4500;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: #1e1e1e;
+  --ring: rgba(0, 191, 255, 0.5);
+
+  /* Added all macro-theme colors for dark mode */
+  --sun-rock: #ff4500;
+  --mer-hiphop: #1e90ff;
+  --ven-rnb: #8a2be2;
+  --ear-world: #00ced1;
+  --ai-edm: #c0c0c0;
+  --ai-edm-accent: #adff2f;
+  --mar-kpop: #ff69b4;
+  --jup-classical: #8b4513;
+  --jup-classical-accent: #ffd700;
+  --sat-jazz: #f5f5f5;
+  --sat-jazz-accent: #ffd700;
+  --cos-house: #191970;
+  --cos-house-accent: #40e0d0;
+  --you-secret: #2f2f2f;
+
+  --chart-1: #00bfff;
+  --chart-2: #1e90ff;
+  --chart-3: #87ceeb;
+  --chart-4: #4169e1;
+  --chart-5: #0000ff;
+  --sidebar: #000010;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #00bfff;
+  --sidebar-primary-foreground: #000010;
+  --sidebar-accent: #1e90ff;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: rgba(0, 191, 255, 0.5);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Added genre-specific colors to theme */
+  --color-sun-rock: var(--sun-rock);
+  --color-mer-hiphop: var(--mer-hiphop);
+  --color-ven-rnb: var(--ven-rnb);
+  --color-ear-world: var(--ear-world);
+  --color-ai-edm: var(--ai-edm);
+  --color-ai-edm-accent: var(--ai-edm-accent);
+  --color-mar-kpop: var(--mar-kpop);
+  --color-jup-classical: var(--jup-classical);
+  --color-jup-classical-accent: var(--jup-classical-accent);
+  --color-sat-jazz: var(--sat-jazz);
+  --color-sat-jazz-accent: var(--sat-jazz-accent);
+  --color-cos-house: var(--cos-house);
+  --color-cos-house-accent: var(--cos-house-accent);
+  --color-you-secret: var(--you-secret);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added cosmic animations and effects */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 191, 255, 0.8), 0 0 40px rgba(0, 191, 255, 0.3);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.6), 0 0 30px rgba(0, 191, 255, 0.2);
+  }
+}
+
+/* Added genre-specific glow animations */
+@keyframes sun-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.6), 0 0 30px rgba(255, 69, 0, 0.2);
+  }
+}
+
+@keyframes mer-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(30, 144, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(30, 144, 255, 0.6), 0 0 30px rgba(30, 144, 255, 0.2);
+  }
+}
+
+@keyframes ven-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6), 0 0 30px rgba(138, 43, 226, 0.2);
+  }
+}
+
+@keyframes ear-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(0, 206, 209, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 206, 209, 0.6), 0 0 30px rgba(0, 206, 209, 0.2);
+  }
+}
+
+@keyframes ai-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(192, 192, 192, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(192, 192, 192, 0.6), 0 0 30px rgba(192, 192, 192, 0.2);
+  }
+}
+
+@keyframes mar-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.6), 0 0 30px rgba(255, 105, 180, 0.2);
+  }
+}
+
+@keyframes jup-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(139, 69, 19, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(139, 69, 19, 0.6), 0 0 30px rgba(139, 69, 19, 0.2);
+  }
+}
+
+@keyframes sat-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(245, 245, 245, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(245, 245, 245, 0.6), 0 0 30px rgba(245, 245, 245, 0.2);
+  }
+}
+
+@keyframes cos-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(25, 25, 112, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(25, 25, 112, 0.6), 0 0 30px rgba(25, 25, 112, 0.2);
+  }
+}
+
+@keyframes you-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(47, 47, 47, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(47, 47, 47, 0.6), 0 0 30px rgba(47, 47, 47, 0.2);
+  }
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+}
+
+.cosmic-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Added genre-specific text glow effects */
+.text-sun-glow {
+  text-shadow: 0 0 10px rgba(255, 69, 0, 0.8), 0 0 20px rgba(255, 69, 0, 0.5);
+  color: #ff4500;
+}
+
+.text-mer-glow {
+  text-shadow: 0 0 10px rgba(30, 144, 255, 0.8), 0 0 20px rgba(30, 144, 255, 0.5);
+  color: #1e90ff;
+}
+
+.text-ven-glow {
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.8), 0 0 20px rgba(138, 43, 226, 0.5);
+  color: #8a2be2;
+}
+
+.text-ear-glow {
+  text-shadow: 0 0 10px rgba(0, 206, 209, 0.8), 0 0 20px rgba(0, 206, 209, 0.5);
+  color: #00ced1;
+}
+
+.text-ai-glow {
+  text-shadow: 0 0 10px rgba(192, 192, 192, 0.8), 0 0 20px rgba(192, 192, 192, 0.5);
+  color: #c0c0c0;
+}
+
+.text-mar-glow {
+  text-shadow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.5);
+  color: #ff69b4;
+}
+
+.text-jup-glow {
+  text-shadow: 0 0 10px rgba(139, 69, 19, 0.8), 0 0 20px rgba(139, 69, 19, 0.5);
+  color: #8b4513;
+}
+
+.text-sat-glow {
+  text-shadow: 0 0 10px rgba(245, 245, 245, 0.8), 0 0 20px rgba(245, 245, 245, 0.5);
+  color: #f5f5f5;
+}
+
+.text-cos-glow {
+  text-shadow: 0 0 10px rgba(25, 25, 112, 0.8), 0 0 20px rgba(25, 25, 112, 0.5);
+  color: #191970;
+}
+
+.text-you-glow {
+  text-shadow: 0 0 10px rgba(47, 47, 47, 0.8), 0 0 20px rgba(47, 47, 47, 0.5);
+  color: #2f2f2f;
+}
+
+.sun-glow {
+  animation: sun-glow 2s ease-in-out infinite;
+}
+
+.mer-glow {
+  animation: mer-glow 2s ease-in-out infinite;
+}
+
+.ven-glow {
+  animation: ven-glow 2s ease-in-out infinite;
+}
+
+.ear-glow {
+  animation: ear-glow 2s ease-in-out infinite;
+}
+
+.ai-glow {
+  animation: ai-glow 2s ease-in-out infinite;
+}
+
+.mar-glow {
+  animation: mar-glow 2s ease-in-out infinite;
+}
+
+.jup-glow {
+  animation: jup-glow 2s ease-in-out infinite;
+}
+
+.sat-glow {
+  animation: sat-glow 2s ease-in-out infinite;
+}
+
+.cos-glow {
+  animation: cos-glow 2s ease-in-out infinite;
+}
+
+.you-glow {
+  animation: you-glow 2s ease-in-out infinite;
+}
+
+.bg-cosmic-gradient {
+  background: linear-gradient(135deg, #000010 0%, #001a33 100%);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.8), 0 0 20px rgba(0, 191, 255, 0.5), 0 0 30px rgba(0, 191, 255, 0.3);
+}
