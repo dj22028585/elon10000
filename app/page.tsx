@@ -112,6 +112,145 @@ export default function HomePage() {
         </div>
       </section>
 
+{/* Samples Section */}
+<section className="relative z-10 py-20 px-4">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-4xl font-bold text-center mb-12 text-glow">Featured Samples</h2>
+
+    {/* Row 1: SUN, MER, VEN, EAR, AI */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-4">
+      {/* SUN (Rock) */}
+      <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#FF4500" }}>
+        <CardContent className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ color: "#FF4500" }}>
+            SUN (Rock)
+          </h3>
+          <p className="text-sm text-muted mb-3">
+            ELON-SUN-0123 — A fiery rock anthem representing the Sun's energy
+          </p>
+          <div className="bg-input rounded-lg p-3 mb-3">
+            {/* ✅ 나중에 실제 SoundCloud iframe 삽입 */}
+            <div className="text-xs text-muted">🎵 SoundCloud Player</div>
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            className="w-full bg-transparent text-xs"
+            style={{ borderColor: "#FF4500", color: "#FF4500" }}
+          >
+            <Play className="mr-1 h-3 w-3" />
+            Play Sample
+          </Button>
+        </CardContent>
+      </Card>
+
+      {/* MER (Hip-Hop) */}
+      <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#00BFFF" }}>
+        <CardContent className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ color: "#00BFFF" }}>
+            MER (Hip-Hop)
+          </h3>
+          <p className="text-sm text-muted mb-3">
+            ELON-MER-0089 — Fast-paced beats reflecting Mercury's speed
+          </p>
+          <div className="bg-input rounded-lg p-3 mb-3">
+            <div className="text-xs text-muted">🎵 SoundCloud Player</div>
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            className="w-full bg-transparent text-xs"
+            style={{ borderColor: "#00BFFF", color: "#00BFFF" }}
+          >
+            <Play className="mr-1 h-3 w-3" />
+            Play Sample
+          </Button>
+        </CardContent>
+      </Card>
+
+      {/* VEN (R&B) */}
+      <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#800080" }}>
+        <CardContent className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ color: "#800080" }}>
+            VEN (R&B)
+          </h3>
+          <p className="text-sm text-muted mb-3">
+            ELON-VEN-0156 — Smooth melodies celebrating Venus's beauty
+          </p>
+          <div className="bg-input rounded-lg p-3 mb-3">
+            <div className="text-xs text-muted">🎵 SoundCloud Player</div>
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            className="w-full bg-transparent text-xs"
+            style={{ borderColor: "#800080", color: "#800080" }}
+          >
+            <Play className="mr-1 h-3 w-3" />
+            Play Sample
+          </Button>
+        </CardContent>
+      </Card>
+
+      {/* EAR (World Music) */}
+      <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#228B22" }}>
+        <CardContent className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ color: "#228B22" }}>
+            EAR (World Music)
+          </h3>
+          <p className="text-sm text-muted mb-3">
+            Global sounds celebrating Earth's diversity
+          </p>
+          <div className="bg-input rounded-lg p-3 mb-3 flex items-center justify-center h-12">
+            <div className="text-xs text-muted opacity-50 cosmic-glow">Coming Soon</div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* AI (EDM) */}
+      <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#C0C0C0" }}>
+        <CardContent className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ color: "#C0C0C0" }}>
+            AI (EDM)
+          </h3>
+          <p className="text-sm text-muted mb-3">
+            Electronic beats powered by artificial intelligence
+          </p>
+          <div className="bg-input rounded-lg p-3 mb-3 flex items-center justify-center h-12">
+            <div className="text-xs text-muted opacity-50 cosmic-glow">Coming Soon</div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+
+    {/* Row 2: MAR, JUP, SAT, COS, YOU */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+      {/* 나머지 카드들도 동일하게 유지 → Coming Soon */}
+      {/* ... (MAR, JUP, SAT, COS, YOU) ... */}
+    </div>
+
+    {/* Featured Poem */}
+    <Card className="mt-12 bg-card/50 backdrop-blur-sm border-border pulse-glow">
+      <CardContent className="p-8">
+        <h3 className="text-2xl font-bold mb-6 text-center text-glow">
+          Featured Poem — ELON-SUN-0179: Something Still
+        </h3>
+        <div className="max-w-2xl mx-auto text-center">
+          <blockquote className="text-lg italic leading-relaxed text-muted whitespace-pre-line">
+            {`Between the errands stands a field
+Our breathing finds a place to graze
+A small bird nails noon to blue
+The clock forgets its sharper tongue
+We listen until the edges blur
+And call this resting music quiet`}
+          </blockquote>
+        </div>
+      </CardContent>
+    </Card>
+  </div>
+</section>
+
+      
       {/* Find Us Everywhere */}
       <section className="relative z-10 py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
