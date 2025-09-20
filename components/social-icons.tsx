@@ -8,13 +8,11 @@ import {
   Instagram,
   Camera,
   Headphones,
-  MessageCircle,
+  MessagesSquare,
   Reddit,
   Facebook,
-  MessageSquare,
 } from "lucide-react"
 
-// 실제 링크들
 const LINKS = {
   youtube: "https://www.youtube.com/@TenKforHim",
   instagram: "https://www.instagram.com/tenkforhim/",
@@ -25,7 +23,7 @@ const LINKS = {
   pinterest: "https://kr.pinterest.com/tenkforhim/",
   facebook: "https://www.facebook.com/profile.php?id=61579061834689",
   medium: "https://medium.com/@tenkforhim",
-  threads: "https://www.threads.com/@tenkforhim",
+  threads: "https://www.threads.net/@tenkforhim",
   tenkforhim: "https://tenkforhim.com/",
   reddit: "https://www.reddit.com/user/BrotherDisastrous303/",
 } as const
@@ -36,31 +34,32 @@ const items = [
   { key: "youtube", label: "YouTube", Icon: Youtube },
   { key: "instagram", label: "Instagram", Icon: Instagram },
   { key: "tiktok", label: "TikTok", Icon: Camera },
-  { key: "pinterest", label: "Pinterest", Icon: Camera },
   { key: "bandcamp", label: "Bandcamp", Icon: Headphones },
-  { key: "medium", label: "Medium", Icon: MessageCircle },
+  { key: "medium", label: "Medium", Icon: MessagesSquare },
   { key: "reddit", label: "Reddit", Icon: Reddit },
   { key: "facebook", label: "Facebook", Icon: Facebook },
-  { key: "threads", label: "Threads", Icon: MessageSquare },
+  { key: "threads", label: "Threads", Icon: MessagesSquare },
   { key: "tenkforhim", label: "tenkforhim.com", Icon: Globe },
+  { key: "pinterest", label: "Pinterest", Icon: Camera },
 ]
 
-export function SocialIcons() {
+export default function SocialIcons() {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10">
+    <div className="grid grid-cols-3 md:grid-cols-4 gap-8">
       {items.map(({ key, label, Icon }) => (
-        <a
-          key={key}
-          href={LINKS[key as keyof typeof LINKS]}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex flex-col items-center"
-        >
-          <div className="rounded-full p-6 bg-black/70 ring-1 ring-cyan-500/20 group-hover:ring-cyan-400/50 transition">
-            <Icon className="h-6 w-6" aria-hidden />
-          </div>
-          <span className="mt-3 text-sm">{label}</span>
-        </a>
+        <div key={key} className="flex flex-col items-center group">
+          <a
+            href={LINKS[key as keyof typeof LINKS]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-16 h-16 rounded-full border border-primary text-primary hover:bg-primary hover:text-primary-foreground cosmic-glow group-hover:pulse-glow flex items-center justify-center transition-all duration-300"
+          >
+            <Icon className="h-6 w-6" />
+          </a>
+          <span className="mt-2 text-sm text-foreground group-hover:text-primary transition-colors">
+            {label}
+          </span>
+        </div>
       ))}
     </div>
   )
