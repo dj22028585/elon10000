@@ -60,34 +60,38 @@ export default function SunPage() {
       <h1 className="text-5xl font-bold text-center text-primary mb-4">SUN</h1>
       <p className="text-center text-secondary mb-12">Ten sub-themes inspired by the Sun</p>
 
-      {/* 2 x 5 grid */}
-      <div className="grid grid-cols-2 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+           {/* 2 x 5 grid (세로 커버에 맞춘 카드) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {subthemes.map((sub, i) => (
           <div
             key={i}
-            className="bg-card/40 rounded-lg overflow-hidden border border-primary/40 shadow-md hover:shadow-xl transition"
+            className="rounded-xl border border-border/60 bg-card/40 shadow-sm hover:shadow-md transition"
           >
-            <div className="relative w-full h-48 flex items-center justify-center bg-black/30">
-              {sub.image ? (
-<Image
-  src={sub.image}
-  alt={sub.title}
-  width={400}
-  height={500}
-  className="w-full h-64 object-contain bg-black/30"
-/>
+            <div className="p-4">
+              {/* 세로 비율 3:4 박스 */}
+              <div className="aspect-[3/4] w-full bg-black/30 rounded-md overflow-hidden flex items-center justify-center">
+                {sub.image ? (
+                  <Image
+                    src={sub.image}
+                    alt={sub.title}
+                    width={600}
+                    height={800}
+                    className="w-full h-full object-contain"
+                    sizes="(max-width: 768px) 50vw, 480px"
+                  />
+                ) : (
+                  <span className="text-2xl text-muted">???</span>
+                )}
+              </div>
 
-              ) : (
-                <div className="flex items-center justify-center w-full h-full text-2xl text-muted">???</div>
-              )}
-            </div>
-            <div className="p-4 text-center">
-              <h3 className="text-xl font-bold text-primary mb-2">{sub.title}</h3>
-              <p className="text-sm text-secondary">{sub.description}</p>
+              {/* 텍스트는 이미지 아래로 분리 */}
+              <h3 className="mt-4 text-lg font-semibold text-primary text-center">
+                {sub.title}
+              </h3>
+              <p className="mt-1 text-sm text-secondary text-center">
+                {sub.description}
+              </p>
             </div>
           </div>
         ))}
       </div>
-    </div>
-  )
-}
