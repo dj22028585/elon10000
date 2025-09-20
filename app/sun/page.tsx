@@ -54,13 +54,16 @@ const subthemes = [
     image: null, // 커버 없으니 ??? 유지
   },
 ] as const;
+
 export default function SunPage() {
   return (
     <div className="min-h-screen bg-cosmic-gradient px-6 py-20">
       <h1 className="text-5xl font-bold text-center text-primary mb-4">SUN</h1>
-      <p className="text-center text-secondary mb-12">Ten sub-themes inspired by the Sun</p>
+      <p className="text-center text-secondary mb-12">
+        Ten sub-themes inspired by the Sun
+      </p>
 
-           {/* 2 x 5 grid (세로 커버에 맞춘 카드) */}
+      {/* 2 x 5 grid (세로 커버에 맞춘 카드) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {subthemes.map((sub, i) => (
           <div
@@ -95,3 +98,6 @@ export default function SunPage() {
           </div>
         ))}
       </div>
+    </div>
+  )
+}
