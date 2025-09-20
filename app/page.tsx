@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ExternalLink, Play, Music, Rocket } from "lucide-react"
 import { CosmicBackground } from "@/components/cosmic-background"
-import { SocialIcons } from "@/components/social-icons"
+import SocialIcons from "@/components/social-icons" // ✅ 중괄호 제거 (default import)
 
 export default function HomePage() {
   return (
@@ -29,18 +29,24 @@ export default function HomePage() {
           </div>
           <p className="text-lg text-secondary mb-8">For Elon Musk, an AI+Human odyssey of sound and poetry.</p>
 
+          {/* ✅ 실제 링크 연결 */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="cosmic-glow bg-primary hover:bg-primary/80 text-primary-foreground">
-              <Play className="mr-2 h-5 w-5" />
-              Listen on SoundCloud
+            <Button asChild size="lg" className="cosmic-glow bg-primary hover:bg-primary/80 text-primary-foreground">
+              <a href="https://soundcloud.com/tenkforhim" target="_blank" rel="noopener noreferrer">
+                <Play className="mr-2 h-5 w-5" />
+                Listen on SoundCloud
+              </a>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="pulse-glow border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground bg-transparent"
             >
-              <ExternalLink className="mr-2 h-5 w-5" />
-              Follow on X
+              <a href="https://x.com/TenKforHim" target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="mr-2 h-5 w-5" />
+                Follow on X
+              </a>
             </Button>
           </div>
         </div>
