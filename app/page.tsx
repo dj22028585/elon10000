@@ -3,8 +3,8 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ExternalLink, Play, Music, Rocket } from "lucide-react"
-import { CosmicBackground } from "@/components/cosmic-background"
-import SocialIcons from "@/components/social-icons"
+import CosmicBackground from "@/components/cosmic-background"   // ✅ 중괄호 제거 (default import)
+import SocialIcons from "@/components/social-icons"              // ✅ 중괄호 제거 (default import)
 
 export default function HomePage() {
   return (
@@ -16,7 +16,6 @@ export default function HomePage() {
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-6xl md:text-8xl font-bold text-glow mb-4 text-primary">ELON:10,000</h1>
           <p className="text-sm text-secondary mb-2">by TenKforHim</p>
-
           <div className="flex items-center justify-center gap-2 mb-2">
             <p className="text-xl md:text-2xl text-foreground">
               10,000 songs · 10,000 poems · honoring one living legend
@@ -28,14 +27,10 @@ export default function HomePage() {
               <Rocket className="h-6 w-6 text-primary animate-pulse" />
             </button>
           </div>
+          <p className="text-lg text-secondary mb-8">For Elon Musk, an AI+Human odyssey of sound and poetry.</p>
 
-          <p className="text-lg text-secondary mb-8">
-            For Elon Musk, an AI+Human odyssey of sound and poetry.
-          </p>
-
-          {/* 실제 링크 연결된 버튼들 */}
+          {/* ✅ 실제 링크 연결된 버튼 2개 */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {/* SoundCloud */}
             <Button
               asChild
               size="lg"
@@ -47,7 +42,6 @@ export default function HomePage() {
               </a>
             </Button>
 
-            {/* X(Twitter) */}
             <Button
               asChild
               size="lg"
@@ -68,7 +62,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-glow">Project Progress</h2>
 
-          {/* Songs Progress */}
+          {/* Songs */}
           <Card className="bg-card/50 backdrop-blur-sm border-border pulse-glow mb-8">
             <CardContent className="p-8">
               <div className="flex items-center gap-4 mb-6 justify-center">
@@ -92,7 +86,7 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          {/* Poems Progress */}
+          {/* Poems */}
           <Card className="bg-card/50 backdrop-blur-sm border-border pulse-glow">
             <CardContent className="p-8">
               <div className="flex items-center gap-4 mb-6 justify-center">
@@ -118,7 +112,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Find Us Everywhere Section */}
+      {/* Find Us Everywhere */}
       <section className="relative z-10 py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-12 text-glow">Find Us Everywhere</h2>
@@ -126,7 +120,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About */}
       <section className="relative z-10 py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <Card className="bg-card/50 backdrop-blur-sm border-border pulse-glow">
@@ -143,7 +137,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="relative z-10 py-8 px-4 border-t border-border">
         <div className="max-w-6xl mx-auto text-center">
           <div className="h-px bg-gradient-to-r from-transparent via-primary to-transparent mb-4" />
