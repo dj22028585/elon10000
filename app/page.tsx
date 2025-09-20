@@ -8,19 +8,19 @@ import CosmicBackground from "@/components/cosmic-background" // default import
 import SocialIcons from "@/components/social-icons"           // default import
 
 export default function HomePage() 
-  function CollapsiblePlayer({ url }: { url: string }) {
+// … imports …
+
+function CollapsiblePlayer({ url }: { url: string }) {
   const src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(
     url
   )}&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false`;
 
   return (
     <details className="rounded-lg bg-input/60 p-3 open:shadow-inner">
-      {/* summary가 토글 버튼 역할을 함 */}
       <summary className="list-none flex items-center justify-center gap-2 cursor-pointer select-none px-3 py-2 rounded-md bg-primary/10 hover:bg-primary/20 transition">
         <Play className="h-5 w-5" />
         <span className="font-medium">Play sample</span>
       </summary>
-
       <div className="mt-3 rounded-lg overflow-hidden">
         <iframe
           title="SoundCloud player"
@@ -37,10 +37,12 @@ export default function HomePage()
   );
 }
 
-{
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-cosmic-gradient relative overflow-hidden">
       <CosmicBackground />
+      {/* …중략… */}
+
 
       {/* Hero Section */}
       <section className="relative z-10 min-h-screen flex items-center justify-center px-4">
