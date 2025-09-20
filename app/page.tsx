@@ -4,12 +4,10 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ExternalLink, Play, Music, Rocket } from "lucide-react"
-import CosmicBackground from "@/components/cosmic-background" // default import
-import SocialIcons from "@/components/social-icons"           // default import
+import CosmicBackground from "@/components/cosmic-background"
+import SocialIcons from "@/components/social-icons"
 
-export default function HomePage() 
-// … imports …
-
+// ⬇️ CollapsiblePlayer는 imports 바로 아래에 둡니다.
 function CollapsiblePlayer({ url }: { url: string }) {
   const src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(
     url
@@ -37,13 +35,11 @@ function CollapsiblePlayer({ url }: { url: string }) {
   );
 }
 
-
+// ⬇️ 이 '하나'의 기본 내보내기만 남겨두세요.
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-cosmic-gradient relative overflow-hidden">
       <CosmicBackground />
-      {/* …중략… */}
-
 
       {/* Hero Section */}
       <section className="relative z-10 min-h-screen flex items-center justify-center px-4">
@@ -84,6 +80,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+ 
+
 
       {/* Progress Section */}
       <section id="progress" className="relative z-10 py-20 px-4">
