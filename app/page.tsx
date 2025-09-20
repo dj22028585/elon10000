@@ -203,27 +203,24 @@ export default function HomePage() {
   </div>
 </section>
 
-
-    {/* Featured Poem */}
-    <Card className="mt-12 bg-card/50 backdrop-blur-sm border-border pulse-glow">
-      <CardContent className="p-8">
-        <h3 className="text-2xl font-bold mb-6 text-center text-glow">
-          Featured Poem — Something Still
-        </h3>
-        <div className="max-w-2xl mx-auto text-center">
-          <blockquote className="text-lg italic leading-relaxed text-muted whitespace-pre-line">
-            {`Between the errands stands a field
-Our breathing finds a place to graze
-A small bird nails noon to blue
-The clock forgets its sharper tongue
-We listen until the edges blur
-And call this resting music quiet`}
-          </blockquote>
-        </div>
-      </CardContent>
-    </Card>
+{/* Featured Poem */}
+<section className="relative z-10 py-20 px-4">
+  <div className="max-w-4xl mx-auto text-center">
+    <h2 className="text-4xl font-bold mb-12 text-glow">Featured Poem</h2>
+    <div className="max-w-2xl mx-auto text-center">
+      <blockquote className="text-lg italic leading-relaxed text-muted">
+        "Between the errands stands a field<br/>
+        Our breathing finds a place to graze<br/>
+        A small bird nails noon to blue<br/>
+        The clock forgets its sharper tongue<br/>
+        We listen until the edges blur<br/>
+        And call this resting music quiet"
+      </blockquote>
+      <cite className="block mt-4 text-secondary">— "Something Still"</cite>
+    </div>
   </div>
 </section>
+
 
       
       {/* Find Us Everywhere */}
