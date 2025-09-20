@@ -29,27 +29,27 @@ export default function HomePage() {
           </div>
           <p className="text-lg text-secondary mb-8">For Elon Musk, an AI+Human odyssey of sound and poetry.</p>
 
-          {/* ✅ 실제 링크 연결 */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="cosmic-glow bg-primary hover:bg-primary/80 text-primary-foreground">
-              <a href="https://soundcloud.com/tenkforhim" target="_blank" rel="noopener noreferrer">
-                <Play className="mr-2 h-5 w-5" />
-                Listen on SoundCloud
-              </a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="pulse-glow border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground bg-transparent"
-            >
-              <a href="https://x.com/TenKforHim" target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="mr-2 h-5 w-5" />
-                Follow on X
-              </a>
-            </Button>
-          </div>
-        </div>
+       {/* 🔗 실제 링크 연결된 버튼들 */}
+<div className="flex flex-col sm:flex-row gap-4 justify-center">
+  <Button asChild size="lg" className="cosmic-glow bg-primary hover:bg-primary/80 text-primary-foreground">
+    <a href="https://soundcloud.com/tenkforhim" target="_blank" rel="noopener noreferrer">
+      <Play className="mr-2 h-5 w-5" />
+      Listen on SoundCloud
+    </a>
+  </Button>
+
+  <Button
+    asChild
+    size="lg"
+    variant="outline"
+    className="pulse-glow border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground bg-transparent"
+  >
+    <a href="https://x.com/TenKforHim" target="_blank" rel="noopener noreferrer">
+      <ExternalLink className="mr-2 h-5 w-5" />
+      Follow on X
+    </a>
+  </Button>
+</div>
       </section>
 
       {/* Progress Section */}
