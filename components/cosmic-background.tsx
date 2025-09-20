@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 
-export function CosmicBackground() {
+export default function CosmicBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -12,7 +12,6 @@ export function CosmicBackground() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
-    // Set canvas size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
@@ -20,14 +19,8 @@ export function CosmicBackground() {
     resizeCanvas()
     window.addEventListener("resize", resizeCanvas)
 
-    // Create stars
     const stars: Array<{
-      x: number
-      y: number
-      size: number
-      opacity: number
-      twinkleSpeed: number
-      twinklePhase: number
+      x: number; y: number; size: number; opacity: number; twinkleSpeed: number; twinklePhase: number
     }> = []
 
     for (let i = 0; i < 200; i++) {
@@ -41,18 +34,14 @@ export function CosmicBackground() {
       })
     }
 
-    // Animation loop
     let animationFrame: number
     let time = 0
 
     const animate = () => {
       time += 0.01
-
-      // Clear canvas
       ctx.fillStyle = "rgba(0, 0, 16, 0.1)"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-      // Draw stars
       stars.forEach((star) => {
         star.twinklePhase += star.twinkleSpeed
         const twinkle = Math.sin(star.twinklePhase) * 0.3 + 0.7
@@ -62,7 +51,6 @@ export function CosmicBackground() {
         ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity * twinkle})`
         ctx.fill()
 
-        // Add subtle blue glow to some stars
         if (Math.random() < 0.1) {
           ctx.beginPath()
           ctx.arc(star.x, star.y, star.size * 3, 0, Math.PI * 2)
@@ -71,7 +59,6 @@ export function CosmicBackground() {
         }
       })
 
-      // Draw cosmic waves
       ctx.strokeStyle = "rgba(0, 191, 255, 0.1)"
       ctx.lineWidth = 2
       for (let i = 0; i < 3; i++) {
