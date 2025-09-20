@@ -112,128 +112,103 @@ export default function HomePage() {
         </div>
       </section>
 
-{/* Samples Section */}
+{/* Featured Samples */}
 <section className="relative z-10 py-20 px-4">
   <div className="max-w-6xl mx-auto">
     <h2 className="text-4xl font-bold text-center mb-12 text-glow">Featured Samples</h2>
 
-    {/* Row 1: SUN, MER, VEN, EAR, AI */}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-4">
-      {/* SUN (Rock) */}
-      <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#FF4500" }}>
-        <CardContent className="p-4">
-          <h3 className="text-lg font-bold mb-2" style={{ color: "#FF4500" }}>
-            SUN (Rock)
-          </h3>
-          <p className="text-sm text-muted mb-3">
-            ELON-SUN-0123 — A fiery rock anthem representing the Sun's energy
-          </p>
-          <div className="bg-input rounded-lg p-3 mb-3">
-            {/* ✅ 나중에 실제 SoundCloud iframe 삽입 */}
-            <div className="text-xs text-muted">🎵 SoundCloud Player</div>
-          </div>
-          <Button
-            variant="outline"
-            size="sm"
-            className="w-full bg-transparent text-xs"
-            style={{ borderColor: "#FF4500", color: "#FF4500" }}
-          >
-            <Play className="mr-1 h-3 w-3" />
-            Play Sample
-          </Button>
-        </CardContent>
-      </Card>
+      {/* SUN */}
+      <div data-slot="card" className="text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-sm bg-card/50 backdrop-blur-sm border-2" style={{ borderColor:"#FF4500" }}>
+        <div data-slot="card-content" className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ color:"#FF4500" }}>SUN (Rock)</h3>
+          <p className="text-sm text-muted mb-3">Fiery rock anthems inspired by the Sun’s energy</p>
+        </div>
+      </div>
 
-      {/* MER (Hip-Hop) */}
-      <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#00BFFF" }}>
-        <CardContent className="p-4">
-          <h3 className="text-lg font-bold mb-2" style={{ color: "#00BFFF" }}>
-            MER (Hip-Hop)
-          </h3>
-          <p className="text-sm text-muted mb-3">
-            ELON-MER-0089 — Fast-paced beats reflecting Mercury's speed
-          </p>
-          <div className="bg-input rounded-lg p-3 mb-3">
-            <div className="text-xs text-muted">🎵 SoundCloud Player</div>
-          </div>
-          <Button
-            variant="outline"
-            size="sm"
-            className="w-full bg-transparent text-xs"
-            style={{ borderColor: "#00BFFF", color: "#00BFFF" }}
-          >
-            <Play className="mr-1 h-3 w-3" />
-            Play Sample
-          </Button>
-        </CardContent>
-      </Card>
+      {/* MER */}
+      <div data-slot="card" className="text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-sm bg-card/50 backdrop-blur-sm border-2" style={{ borderColor:"#00BFFF" }}>
+        <div data-slot="card-content" className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ color:"#00BFFF" }}>MER (Hip-Hop)</h3>
+          <p className="text-sm text-muted mb-3">Fast-paced hip-hop reflecting Mercury’s speed</p>
+        </div>
+      </div>
 
-      {/* VEN (R&B) */}
-      <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#800080" }}>
-        <CardContent className="p-4">
-          <h3 className="text-lg font-bold mb-2" style={{ color: "#800080" }}>
-            VEN (R&B)
-          </h3>
-          <p className="text-sm text-muted mb-3">
-            ELON-VEN-0156 — Smooth melodies celebrating Venus's beauty
-          </p>
-          <div className="bg-input rounded-lg p-3 mb-3">
-            <div className="text-xs text-muted">🎵 SoundCloud Player</div>
-          </div>
-          <Button
-            variant="outline"
-            size="sm"
-            className="w-full bg-transparent text-xs"
-            style={{ borderColor: "#800080", color: "#800080" }}
-          >
-            <Play className="mr-1 h-3 w-3" />
-            Play Sample
-          </Button>
-        </CardContent>
-      </Card>
+      {/* VEN */}
+      <div data-slot="card" className="text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-sm bg-card/50 backdrop-blur-sm border-2" style={{ borderColor:"#800080" }}>
+        <div data-slot="card-content" className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ color:"#800080" }}>VEN (R&amp;B)</h3>
+          <p className="text-sm text-muted mb-3">Smooth R&amp;B melodies celebrating Venus</p>
+        </div>
+      </div>
 
-      {/* EAR (World Music) */}
-      <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#228B22" }}>
-        <CardContent className="p-4">
-          <h3 className="text-lg font-bold mb-2" style={{ color: "#228B22" }}>
-            EAR (World Music)
-          </h3>
-          <p className="text-sm text-muted mb-3">
-            Global sounds celebrating Earth's diversity
-          </p>
-          <div className="bg-input rounded-lg p-3 mb-3 flex items-center justify-center h-12">
-            <div className="text-xs text-muted opacity-50 cosmic-glow">Coming Soon</div>
-          </div>
-        </CardContent>
-      </Card>
+      {/* EAR */}
+      <div data-slot="card" className="text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-sm bg-card/50 backdrop-blur-sm border-2" style={{ borderColor:"#228B22" }}>
+        <div data-slot="card-content" className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ color:"#228B22" }}>EAR (World Music)</h3>
+          <p className="text-sm text-muted mb-3">Global sounds celebrating Earth’s diversity</p>
+        </div>
+      </div>
 
-      {/* AI (EDM) */}
-      <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#C0C0C0" }}>
-        <CardContent className="p-4">
-          <h3 className="text-lg font-bold mb-2" style={{ color: "#C0C0C0" }}>
-            AI (EDM)
-          </h3>
-          <p className="text-sm text-muted mb-3">
-            Electronic beats powered by artificial intelligence
-          </p>
-          <div className="bg-input rounded-lg p-3 mb-3 flex items-center justify-center h-12">
-            <div className="text-xs text-muted opacity-50 cosmic-glow">Coming Soon</div>
-          </div>
-        </CardContent>
-      </Card>
+      {/* AI */}
+      <div data-slot="card" className="text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-sm bg-card/50 backdrop-blur-sm border-2" style={{ borderColor:"#C0C0C0" }}>
+        <div data-slot="card-content" className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ color:"#C0C0C0" }}>AI (EDM)</h3>
+          <p className="text-sm text-muted mb-3">Electronic beats powered by artificial intelligence</p>
+        </div>
+      </div>
     </div>
 
-    {/* Row 2: MAR, JUP, SAT, COS, YOU */}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-      {/* 나머지 카드들도 동일하게 유지 → Coming Soon */}
-      {/* ... (MAR, JUP, SAT, COS, YOU) ... */}
+      {/* MAR */}
+      <div data-slot="card" className="text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-sm bg-card/50 backdrop-blur-sm border-2" style={{ borderColor:"#FF69B4" }}>
+        <div data-slot="card-content" className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ color:"#FF69B4" }}>MAR (K-POP)</h3>
+          <p className="text-sm text-muted mb-3">Energetic K-Pop inspired by Mars</p>
+        </div>
+      </div>
+
+      {/* JUP */}
+      <div data-slot="card" className="text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-sm bg-card/50 backdrop-blur-sm border-2" style={{ borderColor:"#FFD700" }}>
+        <div data-slot="card-content" className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ color:"#FFD700" }}>JUP (Classical)</h3>
+          <p className="text-sm text-muted mb-3">Majestic orchestral music honoring Jupiter</p>
+        </div>
+      </div>
+
+      {/* SAT */}
+      <div data-slot="card" className="text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-sm bg-card/50 backdrop-blur-sm border-2" style={{ borderColor:"#40E0D0" }}>
+        <div data-slot="card-content" className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ color:"#40E0D0" }}>SAT (Jazz)</h3>
+          <p className="text-sm text-muted mb-3">Smooth jazz echoing Saturn’s rings</p>
+        </div>
+      </div>
+
+      {/* COS */}
+      <div data-slot="card" className="text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-sm bg-card/50 backdrop-blur-sm border-2" style={{ borderColor:"#E5E4E2" }}>
+        <div data-slot="card-content" className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ color:"#E5E4E2" }}>COS (House)</h3>
+          <p className="text-sm text-muted mb-3">Cosmic house music for interstellar journeys</p>
+        </div>
+      </div>
+
+      {/* YOU */}
+      <div data-slot="card" className="text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-sm bg-card/50 backdrop-blur-sm border-2" style={{ borderColor:"#000000" }}>
+        <div data-slot="card-content" className="p-4">
+          <h3 className="text-lg font-bold mb-2" style={{ background:"linear-gradient(45deg, #000000, #FFD700)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent" }}>YOU</h3>
+          <p className="text-sm text-muted mb-3">The mystery awaits...</p>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
 
     {/* Featured Poem */}
     <Card className="mt-12 bg-card/50 backdrop-blur-sm border-border pulse-glow">
       <CardContent className="p-8">
         <h3 className="text-2xl font-bold mb-6 text-center text-glow">
-          Featured Poem — ELON-SUN-0179: Something Still
+          Featured Poem — Something Still
         </h3>
         <div className="max-w-2xl mx-auto text-center">
           <blockquote className="text-lg italic leading-relaxed text-muted whitespace-pre-line">
