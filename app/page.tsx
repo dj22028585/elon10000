@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { ExternalLink, Play, Music, Rocket } from "lucide-react"
-import CosmicBackground from "@/components/cosmic-background"
-import SocialIcons from "@/components/social-icons"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ExternalLink, Play, Music, Rocket } from "lucide-react";
+import CosmicBackground from "@/components/cosmic-background";
+import SocialIcons from "@/components/social-icons";
 
-// ⬇️ CollapsiblePlayer는 imports 바로 아래에 둡니다.
+/** 접기식 사운드클라우드 플레이어 */
 function CollapsiblePlayer({ url }: { url: string }) {
   const src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(
     url
@@ -35,7 +35,6 @@ function CollapsiblePlayer({ url }: { url: string }) {
   );
 }
 
-// ⬇️ 이 '하나'의 기본 내보내기만 남겨두세요.
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-cosmic-gradient relative overflow-hidden">
@@ -57,7 +56,9 @@ export default function HomePage() {
               <Rocket className="h-6 w-6 text-primary animate-pulse" />
             </button>
           </div>
-          <p className="text-lg text-secondary mb-8">For Elon Musk, an AI+Human odyssey of sound and poetry.</p>
+          <p className="text-lg text-secondary mb-8">
+            For Elon Musk, an AI+Human odyssey of sound and poetry.
+          </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="cosmic-glow bg-primary hover:bg-primary/80 text-primary-foreground">
@@ -80,9 +81,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
- 
-
 
       {/* Progress Section */}
       <section id="progress" className="relative z-10 py-20 px-4">
@@ -139,214 +137,155 @@ export default function HomePage() {
         </div>
       </section>
 
-   {/* Featured Samples */}
-<section className="relative z-10 py-20 px-4">
-  <div className="max-w-6xl mx-auto">
-    <h2 className="text-4xl font-bold text-center mb-12 text-glow">
-      Featured Samples
-    </h2>
+      {/* Featured Samples */}
+      <section className="relative z-10 py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-glow">Featured Samples</h2>
 
-    {/* Row 1: SUN, MER, VEN, EAR, AI */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-4">
-      {/* SUN (Rock) → /sun 페이지로 이동 + 플레이어 */}
-      <Link href="/sun" className="block">
-        <Card
-          className="bg-card/50 backdrop-blur-sm border-2 hover:shadow-lg transition-shadow"
-          style={{ borderColor: "#FF4500" }}
-        >
-          <CardContent className="p-4">
-            <h3 className="text-lg font-bold mb-2" style={{ color: "#FF4500" }}>
-              SUN (Rock)
-            </h3>
-            <p className="text-sm text-muted mb-3">
-              Fiery rock anthems inspired by the Sun’s energy
-            </p>
+          {/* Row 1: SUN, MER, VEN, EAR, AI */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-4">
+            {/* SUN (Rock) → /sun 페이지로 이동 + 접기식 플레이어 */}
+            <Link href="/sun" className="block">
+              <Card
+                className="bg-card/50 backdrop-blur-sm border-2 hover:shadow-lg transition-shadow"
+                style={{ borderColor: "#FF4500" }}
+              >
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-bold mb-2" style={{ color: "#FF4500" }}>
+                    SUN (Rock)
+                  </h3>
+                  <p className="text-sm text-muted mb-3">
+                    ELON-SUN-0123 — A fiery rock anthem representing the Sun&apos;s energy
+                  </p>
+                  <div className="rounded-lg overflow-hidden bg-input">
+                    <CollapsiblePlayer url="https://soundcloud.com/2qlev7gnf4pl/little-m/s-DIxyQwsedsz?si=fa38edb33c6f4f1fad055e7848546017&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" />
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <CollapsiblePlayer url="https://soundcloud.com/2qlev7gnf4pl/little-m/s-DIxyQwsedsz?si=fa38edb33c6f4f1fad055e7848546017&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" />
-          </CardContent>
-        </Card>
-      </Link>
+            {/* MER (Hip-Hop) */}
+            <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#00BFFF" }}>
+              <CardContent className="p-4">
+                <h3 className="text-lg font-bold mb-2" style={{ color: "#00BFFF" }}>
+                  MER (Hip-Hop)
+                </h3>
+                <p className="text-sm text-muted mb-3">
+                  ELON-MER-0089 — Fast-paced beats reflecting Mercury&apos;s speed
+                </p>
+                <div className="rounded-lg overflow-hidden bg-input">
+                  <CollapsiblePlayer url="https://soundcloud.com/2qlev7gnf4pl/moonlit-whisper?si=62c01721af254260977f1a5192ec4cf1&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" />
+                </div>
+              </CardContent>
+            </Card>
 
-      {/* MER (Hip-Hop) + 플레이어 */}
-      <Card
-        className="bg-card/50 backdrop-blur-sm border-2"
-        style={{ borderColor: "#00BFFF" }}
-      >
-        <CardContent className="p-4">
-          <h3 className="text-lg font-bold mb-2" style={{ color: "#00BFFF" }}>
-            MER (Hip-Hop)
-          </h3>
-          <p className="text-sm text-muted mb-3">
-            Fast-paced hip-hop reflecting Mercury’s speed
-          </p>
+            {/* VEN (R&B) → 임베드 없음 (요청대로) */}
+            <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#800080" }}>
+              <CardContent className="p-4">
+                <h3 className="text-lg font-bold mb-2" style={{ color: "#800080" }}>
+                  VEN (R&amp;B)
+                </h3>
+                <p className="text-sm text-muted mb-3">
+                  ELON-VEN-0156 — Smooth melodies celebrating Venus
+                </p>
+              </CardContent>
+            </Card>
 
-          <CollapsiblePlayer url="https://soundcloud.com/2qlev7gnf4pl/moonlit-whisper?si=62c01721af254260977f1a5192ec4cf1&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" />
-        </CardContent>
-      </Card>
+            {/* EAR (World Music) */}
+            <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#228B22" }}>
+              <CardContent className="p-4">
+                <h3 className="text-lg font-bold mb-2" style={{ color: "#228B22" }}>
+                  EAR (World Music)
+                </h3>
+                <p className="text-sm text-muted mb-3">Global sounds celebrating Earth&apos;s diversity</p>
+              </CardContent>
+            </Card>
 
-      {/* VEN (R&B) – Coming soon */}
-      <Card
-        className="bg-card/50 backdrop-blur-sm border-2"
-        style={{ borderColor: "#800080" }}
-      >
-        <CardContent className="p-4">
-          <h3 className="text-lg font-bold mb-2" style={{ color: "#800080" }}>
-            VEN (R&amp;B)
-          </h3>
-          <p className="text-sm text-muted mb-3">
-            Smooth R&amp;B melodies celebrating Venus
-          </p>
-          <div className="rounded-md bg-input/60 px-4 py-2 text-center text-sm opacity-80">
-            Coming soon
+            {/* AI (EDM) */}
+            <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#C0C0C0" }}>
+              <CardContent className="p-4">
+                <h3 className="text-lg font-bold mb-2" style={{ color: "#C0C0C0" }}>
+                  AI (EDM)
+                </h3>
+                <p className="text-sm text-muted mb-3">Electronic beats powered by artificial intelligence</p>
+              </CardContent>
+            </Card>
           </div>
-        </CardContent>
-      </Card>
 
-      {/* EAR (World Music) – Coming soon */}
-      <Card
-        className="bg-card/50 backdrop-blur-sm border-2"
-        style={{ borderColor: "#228B22" }}
-      >
-        <CardContent className="p-4">
-          <h3 className="text-lg font-bold mb-2" style={{ color: "#228B22" }}>
-            EAR (World Music)
-          </h3>
-          <p className="text-sm text-muted mb-3">
-            Global sounds celebrating Earth’s diversity
-          </p>
-          <div className="rounded-md bg-input/60 px-4 py-2 text-center text-sm opacity-80">
-            Coming soon
+          {/* Row 2: MAR, JUP, SAT, COS(네이비), YOU */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#FF69B4" }}>
+              <CardContent className="p-4">
+                <h3 className="text-lg font-bold mb-2" style={{ color: "#FF69B4" }}>
+                  MAR (K-POP)
+                </h3>
+                <p className="text-sm text-muted mb-3">Energetic K-Pop inspired by Mars</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#FFD700" }}>
+              <CardContent className="p-4">
+                <h3 className="text-lg font-bold mb-2" style={{ color: "#FFD700" }}>
+                  JUP (Classical)
+                </h3>
+                <p className="text-sm text-muted mb-3">Majestic orchestral music honoring Jupiter</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#40E0D0" }}>
+              <CardContent className="p-4">
+                <h3 className="text-lg font-bold mb-2" style={{ color: "#40E0D0" }}>
+                  SAT (Jazz)
+                </h3>
+                <p className="text-sm text-muted mb-3">Smooth jazz echoing Saturn&apos;s rings</p>
+              </CardContent>
+            </Card>
+
+            {/* COS 네이비 */}
+            <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#0B2D5C" }}>
+              <CardContent className="p-4">
+                <h3 className="text-lg font-bold mb-2" style={{ color: "#0B2D5C" }}>
+                  COS (House)
+                </h3>
+                <p className="text-sm text-muted mb-3">Cosmic house music for interstellar journeys</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#000000" }}>
+              <CardContent className="p-4">
+                <h3
+                  className="text-lg font-bold mb-2"
+                  style={{
+                    background: "linear-gradient(45deg, #000000, #FFD700)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  YOU
+                </h3>
+                <p className="text-sm text-muted mb-3">The mystery awaits...</p>
+              </CardContent>
+            </Card>
           </div>
-        </CardContent>
-      </Card>
-
-      {/* AI (EDM) – Coming soon */}
-      <Card
-        className="bg-card/50 backdrop-blur-sm border-2"
-        style={{ borderColor: "#C0C0C0" }}
-      >
-        <CardContent className="p-4">
-          <h3 className="text-lg font-bold mb-2" style={{ color: "#C0C0C0" }}>
-            AI (EDM)
-          </h3>
-          <p className="text-sm text-muted mb-3">
-            Electronic beats powered by artificial intelligence
-          </p>
-          <div className="rounded-md bg-input/60 px-4 py-2 text-center text-sm opacity-80">
-            Coming soon
-          </div>
-        </CardContent>
-      </Card>
-    </div>
-
-    {/* Row 2: MAR, JUP, SAT, COS(네이비), YOU */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-      <Card
-        className="bg-card/50 backdrop-blur-sm border-2"
-        style={{ borderColor: "#FF69B4" }}
-      >
-        <CardContent className="p-4">
-          <h3 className="text-lg font-bold mb-2" style={{ color: "#FF69B4" }}>
-            MAR (K-POP)
-          </h3>
-          <p className="text-sm text-muted mb-3">
-            Energetic K-Pop inspired by Mars
-          </p>
-          <div className="rounded-md bg-input/60 px-4 py-2 text-center text-sm opacity-80">
-            Coming soon
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card
-        className="bg-card/50 backdrop-blur-sm border-2"
-        style={{ borderColor: "#FFD700" }}
-      >
-        <CardContent className="p-4">
-          <h3 className="text-lg font-bold mb-2" style={{ color: "#FFD700" }}>
-            JUP (Classical)
-          </h3>
-          <p className="text-sm text-muted mb-3">
-            Majestic orchestral music honoring Jupiter
-          </p>
-          <div className="rounded-md bg-input/60 px-4 py-2 text-center text-sm opacity-80">
-            Coming soon
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card
-        className="bg-card/50 backdrop-blur-sm border-2"
-        style={{ borderColor: "#40E0D0" }}
-      >
-        <CardContent className="p-4">
-          <h3 className="text-lg font-bold mb-2" style={{ color: "#40E0D0" }}>
-            SAT (Jazz)
-          </h3>
-          <p className="text-sm text-muted mb-3">
-            Smooth jazz echoing Saturn’s rings
-          </p>
-          <div className="rounded-md bg-input/60 px-4 py-2 text-center text-sm opacity-80">
-            Coming soon
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* COS 네이비 */}
-      <Card
-        className="bg-card/50 backdrop-blur-sm border-2"
-        style={{ borderColor: "#0B2D5C" }}
-      >
-        <CardContent className="p-4">
-          <h3 className="text-lg font-bold mb-2" style={{ color: "#0B2D5C" }}>
-            COS (House)
-          </h3>
-          <p className="text-sm text-muted mb-3">
-            Cosmic house music for interstellar journeys
-          </p>
-          <div className="rounded-md bg-input/60 px-4 py-2 text-center text-sm opacity-80">
-            Coming soon
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card
-        className="bg-card/50 backdrop-blur-sm border-2"
-        style={{ borderColor: "#000000" }}
-      >
-        <CardContent className="p-4">
-          <h3
-            className="text-lg font-bold mb-2"
-            style={{
-              background: "linear-gradient(45deg, #000000, #FFD700)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            YOU
-          </h3>
-          <p className="text-sm text-muted mb-3">The mystery awaits...</p>
-          <div className="rounded-md bg-input/60 px-4 py-2 text-center text-sm opacity-80">
-            ???
-          </div>
-        </CardContent>
-      </Card>
-    </div>
-  </div>
-</section>
-
 
           {/* Featured Poem */}
           <Card className="mt-12 bg-card/50 backdrop-blur-sm border-border pulse-glow">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-6 text-center text-glow">Featured Poem — Something Still</h3>
+              <h3 className="text-2xl font-bold mb-6 text-center text-glow">
+                Featured Poem — Something Still
+              </h3>
               <div className="max-w-2xl mx-auto text-center">
                 <blockquote className="text-lg italic leading-relaxed text-muted">
-                  {"Between the errands stands a field"}<br />
-                  {"Our breathing finds a place to graze"}<br />
-                  {"A small bird nails noon to blue"}<br />
-                  {"The clock forgets its sharper tongue"}<br />
-                  {"We listen until the edges blur"}<br />
+                  {"Between the errands stands a field"}
+                  <br />
+                  {"Our breathing finds a place to graze"}
+                  <br />
+                  {"A small bird nails noon to blue"}
+                  <br />
+                  {"The clock forgets its sharper tongue"}
+                  <br />
+                  {"We listen until the edges blur"}
+                  <br />
                   {"And call this resting music quiet"}
                 </blockquote>
               </div>
@@ -388,5 +327,5 @@ export default function HomePage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
