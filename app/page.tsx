@@ -166,20 +166,22 @@ export default function HomePage() {
   </Link>
 
   {/* MER (Hip-Hop) */}
-  <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#00BFFF" }}>
-    <CardContent className="p-4">
-      <h3 className="text-lg font-bold mb-2" style={{ color: "#00BFFF" }}>
-        MER (Hip-Hop)
-      </h3>
-      <p className="text-sm text-muted mb-3">
-        Fast-paced hip-hop reflecting Mercury’s speed
-      </p>
-      {/* MER 샘플 */}
-      <div className="rounded-lg overflow-hidden bg-input">
-        <CollapsiblePlayer url="https://soundcloud.com/2qlev7gnf4pl/moonlit-whisper?si=62c01721af254260977f1a5192ec4cf1&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" />
-      </div>
-    </CardContent>
-  </Card>
+  <Link href="/mer" className="block">
+    <Card className="bg-card/50 backdrop-blur-sm border-2 hover:shadow-lg transition-shadow" style={{ borderColor: "#00BFFF" }}>
+      <CardContent className="p-4">
+        <h3 className="text-lg font-bold mb-2" style={{ color: "#00BFFF" }}>
+          MER (Hip-Hop)
+        </h3>
+        <p className="text-sm text-muted mb-3">
+          Fast-paced hip-hop reflecting Mercury’s speed
+        </p>
+        {/* MER 샘플 링크 to /mer */}
+        <div className="rounded-lg overflow-hidden bg-input p-3">
+          <div className="text-sm text-secondary">Open MER collection</div>
+        </div>
+      </CardContent>
+    </Card>
+  </Link>
 
   {/* VEN (R&B) */}
   <Card className="bg-card/50 backdrop-blur-sm border-2" style={{ borderColor: "#800080" }}>
