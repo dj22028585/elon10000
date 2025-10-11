@@ -120,8 +120,8 @@ export default function HomePage() {
               </div>
               <div className="space-y-4 max-w-lg mx-auto">
                 <div className="flex justify-between text-xl">
-                  <span>200 / 10,000</span>
-                  <span className="text-primary font-bold text-glow">(2%)</span>
+                  <span>300 / 10,000</span>
+                  <span className="text-primary font-bold text-glow">(3%)</span>
                 </div>
                 <div className="relative w-full bg-input rounded-full h-4">
                   <div
