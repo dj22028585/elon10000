@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState, ReactNode } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -18,8 +19,8 @@ function CollapsiblePlayer({
   url: string;
   open: boolean;
   onToggle: () => void;
-  accent?: string; // 버튼 그라데이션/글로우 색
-  icon?: React.ReactNode; // 버튼 안 왼쪽에 들어갈 아이콘/이모지
+  accent?: string;         // 버튼 그라데이션/글로우 색
+  icon?: ReactNode;        // 버튼 안 왼쪽에 들어갈 아이콘/이모지
 }) {
   const src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(
     url
@@ -76,7 +77,7 @@ export default function HomePage() {
       title: "MER (Hip-Hop)",
       subtitle: "Fast-paced hip-hop reflecting Mercury’s speed",
       color: "#00BFFF",
-      url: "https://soundcloud.com/tenkforhim", // 임시 링크, MER용 샘플 있으면 교체
+      url: "https://soundcloud.com/tenkforhim",
       href: "/mer",
     },
     {
@@ -91,7 +92,7 @@ export default function HomePage() {
       id: "EAR",
       title: "EAR (World Music)",
       subtitle: "Global sounds celebrating Earth’s diversity",
-      color: "#228B22",
+      color: "#22C55E",
       url: "https://soundcloud.com/tenkforhim",
       href: "/ear",
     },
@@ -139,7 +140,7 @@ export default function HomePage() {
       id: "YOU",
       title: "YOU",
       subtitle: "The mystery awaits...",
-      color: "#000000",
+      color: "#FACC15",
       url: "https://soundcloud.com/tenkforhim",
       href: "/you",
     },
@@ -272,27 +273,29 @@ export default function HomePage() {
         </div>
       </section>
 
-          {/* Featured Samples */}
+      {/* Featured Samples */}
       <section className="relative z-10 py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-glow">Featured Samples</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-glow">
+            Featured Samples
+          </h2>
 
           {(() => {
             // 행성별 아이콘(이모지) + 색
             const planets = [
               { id: "SUN", icon: "🔥", title: "SUN (Rock)",        subtitle: "Fiery rock anthems inspired by the Sun’s energy",           color: "#FF4500", url: "https://soundcloud.com/2qlev7gnf4pl/little-m/s-DIxyQwsedsz?si=fa38edb33c6f4f1fad055e7848546017&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing", href: "/sun" },
-              { id: "MER", icon: "💰", title: "MER (Hip-Hop)",     subtitle: "Fast-paced hip-hop reflecting Mercury’s speed",             color: "#00BFFF", url: "https://soundcloud.com/tenkforhim", href: "/mer" },
-              { id: "VEN", icon: "💜", title: "VEN (R&B)",         subtitle: "Smooth melodies celebrating Venus",                         color: "#800080", url: "https://soundcloud.com/tenkforhim", href: "/ven" },
+              { id: "MER", icon: "💨", title: "MER (Hip-Hop)",     subtitle: "Fast-paced hip-hop reflecting Mercury’s speed",             color: "#00BFFF", url: "https://soundcloud.com/tenkforhim", href: "/mer" },
+              { id: "VEN", icon: "💎", title: "VEN (R&B)",         subtitle: "Smooth melodies celebrating Venus",                         color: "#800080", url: "https://soundcloud.com/tenkforhim", href: "/ven" },
               { id: "EAR", icon: "🌍", title: "EAR (World Music)", subtitle: "Global sounds celebrating Earth’s diversity",               color: "#22C55E", url: "https://soundcloud.com/tenkforhim", href: "/ear" },
               { id: "AI",  icon: "🤖", title: "AI (EDM)",          subtitle: "Electronic beats powered by artificial intelligence",       color: "#C0C0C0", url: "https://soundcloud.com/tenkforhim", href: "/ai" },
               { id: "MAR", icon: "🌸", title: "MAR (K-POP)",       subtitle: "Energetic K-Pop inspired by Mars",                          color: "#FF69B4", url: "https://soundcloud.com/tenkforhim", href: "/mar" },
               { id: "JUP", icon: "🪐", title: "JUP (Classical)",   subtitle: "Majestic orchestral music honoring Jupiter",                 color: "#FFD700", url: "https://soundcloud.com/tenkforhim", href: "/jup" },
               { id: "SAT", icon: "🎷", title: "SAT (Jazz)",        subtitle: "Smooth jazz echoing Saturn's rings",                         color: "#40E0D0", url: "https://soundcloud.com/tenkforhim", href: "/sat" },
               { id: "COS", icon: "🌌", title: "COS (House)",       subtitle: "Cosmic house music for interstellar journeys",              color: "#0B2D5C", url: "https://soundcloud.com/tenkforhim", href: "/cos" },
-              { id: "YOU", icon: "🚀", title: "YOU",               subtitle: "The mystery awaits...",                                     color: "#FACC15", url: "https://soundcloud.com/tenkforhim", href: "/you" },
+              { id: "YOU", icon: "✨", title: "YOU",               subtitle: "The mystery awaits...",                                     color: "#FACC15", url: "https://soundcloud.com/tenkforhim", href: "/you" },
             ];
 
-            const [openId, setOpenId] = React.useState<string | null>(null);
+            const [openId, setOpenId] = useState<string | null>(null);
 
             return (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -313,7 +316,10 @@ export default function HomePage() {
                               {p.title}
                             </h3>
                           </div>
-                          <Link href={p.href} className="text-xs text-secondary hover:text-primary underline underline-offset-4">
+                          <Link
+                            href={p.href}
+                            className="text-xs text-secondary hover:text-primary underline underline-offset-4"
+                          >
                             Open
                           </Link>
                         </div>
@@ -341,9 +347,7 @@ export default function HomePage() {
       {/* Find Us Everywhere */}
       <section className="relative z-10 py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-12 text-glow">
-            Find Us Everywhere
-          </h2>
+          <h2 className="text-4xl font-bold mb-12 text-glow">Find Us Everywhere</h2>
           <SocialIcons />
         </div>
       </section>
