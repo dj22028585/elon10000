@@ -1,27 +1,103 @@
-"use client";
-// This page is a client component: renders an interactive MER collection grid
-export default function MerPage() {
-  const items = Array.from({ length: 9 }, (_, i) => `Track ${i + 1}`);
+"use client"
+
+import Image from "next/image"
+
+const subthemes = [
+  {
+    title: "Ignition",
+    description: "The mystery begins",
+    image: null, // 커버 없으니 ??? 유지
+  },
+  {
+    title: "Solar Embrace",
+    description: "Radiant warmth and light",
+    image: "/covers/sun/A-02-Solar.jpg",
+  },
+  {
+    title: "Aureate Throne",
+    description: "Majestic golden energy",
+    image: "/covers/sun/A-03-Aureate.jpg",
+  },
+  {
+    title: "Red March, Black Ledger",
+    description: "War and reckoning",
+    image: "/covers/sun/A-04-Red.jpg",
+  },
+  {
+    title: "Dear Rocket Boy",
+    description: "Letters to the sky",
+    image: "/covers/sun/A-05-Dear.jpg",
+  },
+  {
+    title: "Chasing Horizons",
+    description: "Beyond the edge of day",
+    image: "/covers/sun/A-06-Chasing.jpg",
+  },
+  {
+    title: "Endless Sunset",
+    description: "Never-ending glow",
+    image: "/covers/sun/A-07-Endless.jpg",
+  },
+  {
+    title: "Lucid Reverie",
+    description: "Dreamlike clarity",
+    image: "/covers/sun/A-08-Lucid.jpg",
+  },
+  {
+    title: "Riff & Boogie",
+    description: "Rhythms of freedom",
+    image: "/covers/sun/A-09-Riff.jpg",
+  },
+  {
+    title: "Let’s Rock",
+    description: "???",
+    image: null, // 커버 없으니 ??? 유지
+  },
+] as const;
+
+export default function SunPage() {
   return (
-    <main className="mx-auto max-w-6xl px-4 py-14">
-      <h1 className="text-4xl font-extrabold tracking-wide mb-2">MER</h1>
-      <p className="text-white/70 mb-8">
-        Fast-paced hip-hop reflecting Mercury’s speed
+    <div className="min-h-screen bg-cosmic-gradient px-6 py-20">
+      <h1 className="text-5xl font-bold text-center text-primary mb-4">SUN</h1>
+      <p className="text-center text-secondary mb-12">
+        Ten sub-themes inspired by the Sun
       </p>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((title) => (
+
+      {/* 2 x 5 grid (세로 커버에 맞춘 카드) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {subthemes.map((sub, i) => (
           <div
-            key={title}
-            className="rounded-xl border border-white/10 bg-white/5 p-4 hover:border-white/20 hover:bg-white/10 transition"
+            key={i}
+            className="rounded-xl border border-border/60 bg-card/40 shadow-sm hover:shadow-md transition"
           >
-            <div className="mb-3 flex items-center justify-center rounded-lg border border-white/10 bg-black/30 aspect-[3/4]">
-              <span className="text-2xl text-white/60">???</span>
+            <div className="p-4">
+              {/* 세로 비율 3:4 박스 */}
+              <div className="aspect-[3/4] w-full bg-black/30 rounded-md overflow-hidden flex items-center justify-center">
+                {sub.image ? (
+                  <Image
+                    src={sub.image}
+                    alt={sub.title}
+                    width={600}
+                    height={800}
+                    className="w-full h-full object-contain"
+                    sizes="(max-width: 768px) 50vw, 480px"
+                  />
+                ) : (
+                  <span className="text-2xl text-muted">???</span>
+                )}
+              </div>
+
+              {/* 텍스트는 이미지 아래로 분리 */}
+              <h3 className="mt-4 text-lg font-semibold text-primary text-center">
+                {sub.title}
+              </h3>
+              <p className="mt-1 text-sm text-secondary text-center">
+                {sub.description}
+              </p>
             </div>
-            <div className="text-lg font-semibold">{title}</div>
           </div>
         ))}
       </div>
-    </main>
-  );
+    </div>
+  )
 }
-
