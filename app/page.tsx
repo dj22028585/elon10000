@@ -302,15 +302,18 @@ const planets = [
           {/* Content */}
           <div className="relative z-10 flex flex-col justify-between h-full">
             <div>
+              {/* ⬇️ 옵션 A 적용: 한 줄 고정 + 반응형 폰트 */}
               <h3
-                className="text-xl font-bold tracking-tight mb-3"
+                className="font-bold tracking-tight leading-tight whitespace-nowrap mb-3"
                 style={{
                   color: p.color,
                   textShadow: `0 0 10px ${p.color}AA`,
+                  fontSize: "clamp(16px, 1.6vw, 20px)",
                 }}
               >
                 {p.title}
               </h3>
+
               <p className="text-sm text-white/80 leading-relaxed mb-6">
                 {p.subtitle}
               </p>
@@ -344,6 +347,7 @@ const planets = [
     </div>
   </div>
 </section>
+
 
 
       {/* Find Us Everywhere */}
