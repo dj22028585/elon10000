@@ -11,7 +11,7 @@ const subthemes = [
   {
     title: "Afterglow",
     description: "A dreamy trap getaway.",
-    image: "/covers/mer/B-02-Afterglow.jpg",
+    image: "/covers/mer/B-02-Afeterglow.jpg",
   },
   {
     title: "17:22",
