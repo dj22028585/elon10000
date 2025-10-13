@@ -273,97 +273,77 @@ export default function HomePage() {
         </div>
       </section>
 
-  {/* Featured Samples */}
+{/* Featured Samples */}
 <section className="relative z-10 py-20 px-4">
   <div className="max-w-6xl mx-auto">
     <h2 className="text-4xl font-bold text-center mb-12 text-glow">
       Featured Samples
     </h2>
 
-    {(() => {
-      const items = [
-        { id:"SUN", title:"SUN (Rock)",        sub:"Fiery rock anthems inspired by the Sun’s energy",           color:"#FF4500", href:"/sun" },
-        { id:"MER", title:"MER (Hip-Hop)",     sub:"Fast-paced hip-hop reflecting Mercury’s speed",             color:"#00BFFF", href:"/mer" },
-        { id:"VEN", title:"VEN (R&B)",         sub:"Smooth melodies celebrating Venus",                         color:"#800080", href:"/ven" },
-        { id:"EAR", title:"EAR (World Music)", sub:"Global sounds celebrating Earth’s diversity",               color:"#22C55E", href:"/ear" },
-        { id:"AI",  title:"AI (EDM)",          sub:"Electronic beats powered by artificial intelligence",       color:"#C0C0C0", href:"/ai" },
-        { id:"MAR", title:"MAR (K-POP)",       sub:"Energetic K-Pop inspired by Mars",                          color:"#FF69B4", href:"/mar" },
-        { id:"JUP", title:"JUP (Classical)",   sub:"Majestic orchestral music honoring Jupiter",                 color:"#FFD700", href:"/jup" },
-        { id:"SAT", title:"SAT (Jazz)",        sub:"Smooth jazz echoing Saturn's rings",                         color:"#40E0D0", href:"/sat" },
-        { id:"COS", title:"COS (House)",       sub:"Cosmic house music for interstellar journeys",              color:"#0B2D5C", href:"/cos" },
-        { id:"YOU", title:"YOU",               sub:"The mystery awaits...",                                     color:"#FACC15", href:"/you" },
-      ];
-
-      return (
-       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
-  {items.map((p) => (
-    <div
-      key={p.id}
-      className="group rounded-xl p-5 bg-white/[0.06] ring-1 ring-white/12
-                 transition hover:-translate-y-1"
-      /* 기본은 옅은 내부선, 호버 시 행성색으로 또렷하게 */
-      style={{
-        boxShadow: `inset 0 0 0 2px ${p.color}22`,
-      }}
-    >
-      {/* 상단 타이틀 + 얇은 액센트 바 */}
-      <div className="mb-4">
-        <h3
-          className="text-lg font-semibold tracking-tight"
-          style={{ color: p.color }}
-        >
-          {p.title}
-        </h3>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+      {planets.map((p) => (
         <div
-          className="mt-2 h-[2px] w-10 rounded-full transition-all
-                     group-hover:w-16"
-          style={{ background: `${p.color}CC` }}
-        />
-      </div>
+          key={p.id}
+          className="group relative rounded-xl p-6 transition-all duration-300
+                     bg-gradient-to-br from-black/50 via-black/30 to-black/10
+                     hover:scale-[1.04] hover:-translate-y-1
+                     shadow-[0_0_20px_-5px_rgba(255,255,255,0.2)] overflow-hidden"
+        >
+          {/* Outer neon border */}
+          <div
+            className="absolute inset-0 rounded-xl opacity-40 group-hover:opacity-100 transition-all duration-300 blur-md"
+            style={{
+              background: `linear-gradient(135deg, ${p.color}44, transparent 60%)`,
+              boxShadow: `0 0 25px ${p.color}55`,
+            }}
+          />
 
-      <p className="text-sm text-white/75 mb-5 leading-relaxed">
-        {p.sub}
-      </p>
+          {/* Content */}
+          <div className="relative z-10 flex flex-col justify-between h-full">
+            <div>
+              <h3
+                className="text-xl font-bold tracking-tight mb-3"
+                style={{
+                  color: p.color,
+                  textShadow: `0 0 10px ${p.color}AA`,
+                }}
+              >
+                {p.title}
+              </h3>
+              <p className="text-sm text-white/80 leading-relaxed mb-6">
+                {p.subtitle}
+              </p>
+            </div>
 
-      {/* 버튼만 이동 동작 */}
-      <button
-        onClick={() => (window.location.href = p.href)}
-        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-md
-                   text-sm font-medium transition
-                   ring-1 ring-white/25 bg-white/[0.02]
-                   hover:bg-white/[0.06]"
-        style={{
-          /* 버튼은 미묘한 테두리 + 행성색 보더/글자 강조 */
-          borderColor: `${p.color}66`,
-          color: "#E5F4FF",
-          boxShadow: `0 0 0 1px ${p.color}33`,
-        }}
-        onMouseEnter={(e) => {
-          (e.currentTarget.style.boxShadow = `0 0 18px ${p.color}44`);
-          (e.currentTarget.style.borderColor = `${p.color}AA`);
-        }}
-        onMouseLeave={(e) => {
-          (e.currentTarget.style.boxShadow = `0 0 0 1px ${p.color}33`);
-          (e.currentTarget.style.borderColor = `${p.color}66`);
-        }}
-      >
-        <Play className="h-4 w-4" />
-        Play Sample
-      </button>
-
-      {/* 카드 외곽선 강조는 hover에만 */}
-      <style jsx>{`
-        .group:hover {
-          box-shadow:
-            inset 0 0 0 2px ${p.color}AA,
-            0 10px 22px -12px ${p.color}40;
-        }
-      `}</style>
+            <button
+              onClick={() => (window.location.href = p.href)}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-md
+                         font-semibold transition-all duration-300
+                         bg-black/40 border border-white/20
+                         group-hover:shadow-[0_0_18px_currentColor]"
+              style={{
+                color: p.color,
+                boxShadow: `inset 0 0 12px ${p.color}55`,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = `linear-gradient(90deg, ${p.color}33, ${p.color}55)`;
+                e.currentTarget.style.boxShadow = `0 0 25px ${p.color}77, inset 0 0 8px ${p.color}AA`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = `rgba(0,0,0,0.4)`;
+                e.currentTarget.style.boxShadow = `inset 0 0 12px ${p.color}55`;
+              }}
+            >
+              <Play className="h-5 w-5" />
+              Play Sample
+            </button>
+          </div>
+        </div>
+      ))}
     </div>
-  ))}
-</div>
-
+  </div>
 </section>
+
 
       {/* Find Us Everywhere */}
       <section className="relative z-10 py-20 px-4">
