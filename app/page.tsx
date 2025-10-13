@@ -295,36 +295,74 @@ export default function HomePage() {
       ];
 
       return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
-          {items.map((p) => (
-            <div
-              key={p.id}
-              className="rounded-xl p-5 bg-white/5 ring-1 ring-white/10 hover:ring-white/20 hover:-translate-y-0.5 transition"
-              style={{ boxShadow: `0 0 0 2px ${p.color}33 inset` }}
-            >
-              <div className="flex flex-col justify-between h-full">
-                <div>
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: p.color }}>
-                    {p.title}
-                  </h3>
-                  <p className="text-sm text-white/70 mb-4">{p.sub}</p>
-                </div>
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+  {items.map((p) => (
+    <div
+      key={p.id}
+      className="group rounded-xl p-5 bg-white/[0.06] ring-1 ring-white/12
+                 transition hover:-translate-y-1"
+      /* 기본은 옅은 내부선, 호버 시 행성색으로 또렷하게 */
+      style={{
+        boxShadow: `inset 0 0 0 2px ${p.color}22`,
+      }}
+    >
+      {/* 상단 타이틀 + 얇은 액센트 바 */}
+      <div className="mb-4">
+        <h3
+          className="text-lg font-semibold tracking-tight"
+          style={{ color: p.color }}
+        >
+          {p.title}
+        </h3>
+        <div
+          className="mt-2 h-[2px] w-10 rounded-full transition-all
+                     group-hover:w-16"
+          style={{ background: `${p.color}CC` }}
+        />
+      </div>
 
-                <button
-                  onClick={() => window.location.href = p.href}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-md
-                             text-sm ring-1 ring-white/20 hover:bg-white/10 transition"
-                >
-                  <Play className="h-4 w-4" />
-                  Play Sample
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      );
-    })()}
-  </div>
+      <p className="text-sm text-white/75 mb-5 leading-relaxed">
+        {p.sub}
+      </p>
+
+      {/* 버튼만 이동 동작 */}
+      <button
+        onClick={() => (window.location.href = p.href)}
+        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-md
+                   text-sm font-medium transition
+                   ring-1 ring-white/25 bg-white/[0.02]
+                   hover:bg-white/[0.06]"
+        style={{
+          /* 버튼은 미묘한 테두리 + 행성색 보더/글자 강조 */
+          borderColor: `${p.color}66`,
+          color: "#E5F4FF",
+          boxShadow: `0 0 0 1px ${p.color}33`,
+        }}
+        onMouseEnter={(e) => {
+          (e.currentTarget.style.boxShadow = `0 0 18px ${p.color}44`);
+          (e.currentTarget.style.borderColor = `${p.color}AA`);
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget.style.boxShadow = `0 0 0 1px ${p.color}33`);
+          (e.currentTarget.style.borderColor = `${p.color}66`);
+        }}
+      >
+        <Play className="h-4 w-4" />
+        Play Sample
+      </button>
+
+      {/* 카드 외곽선 강조는 hover에만 */}
+      <style jsx>{`
+        .group:hover {
+          box-shadow:
+            inset 0 0 0 2px ${p.color}AA,
+            0 10px 22px -12px ${p.color}40;
+        }
+      `}</style>
+    </div>
+  ))}
+</div>
+
 </section>
 
       {/* Find Us Everywhere */}
