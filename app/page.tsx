@@ -62,89 +62,90 @@ function CollapsiblePlayer({
 
 /** 메인 페이지 */
 export default function HomePage() {
-  /** 10개 대주제 데이터 */
-  const planets = [
-    {
-      id: "SUN",
-      title: "SUN (Rock)",
-      subtitle: "Fiery rock anthems inspired by the Sun’s energy",
-      color: "#FF4500",
-      url: "https://soundcloud.com/2qlev7gnf4pl/little-m/s-DIxyQwsedsz?si=fa38edb33c6f4f1fad055e7848546017&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-      href: "/sun",
-    },
-    {
-      id: "MER",
-      title: "MER (Hip-Hop)",
-      subtitle: "Fast-paced hip-hop reflecting Mercury’s speed",
-      color: "#00BFFF",
-      url: "https://soundcloud.com/tenkforhim",
-      href: "/mer",
-    },
-    {
-      id: "VEN",
-      title: "VEN (R&B)",
-      subtitle: "Smooth melodies celebrating Venus",
-      color: "#800080",
-      url: "https://soundcloud.com/tenkforhim",
-      href: "/ven",
-    },
-    {
-      id: "EAR",
-      title: "EAR (World Music)",
-      subtitle: "Global sounds celebrating Earth’s diversity",
-      color: "#22C55E",
-      url: "https://soundcloud.com/tenkforhim",
-      href: "/ear",
-    },
-    {
-      id: "AI",
-      title: "AI (EDM)",
-      subtitle: "Electronic beats powered by artificial intelligence",
-      color: "#C0C0C0",
-      url: "https://soundcloud.com/tenkforhim",
-      href: "/ai",
-    },
-    {
-      id: "MAR",
-      title: "MAR (K-POP)",
-      subtitle: "Energetic K-Pop inspired by Mars",
-      color: "#FF69B4",
-      url: "https://soundcloud.com/tenkforhim",
-      href: "/mar",
-    },
-    {
-      id: "JUP",
-      title: "JUP (Classical)",
-      subtitle: "Majestic orchestral music honoring Jupiter",
-      color: "#FFD700",
-      url: "https://soundcloud.com/tenkforhim",
-      href: "/jup",
-    },
-    {
-      id: "SAT",
-      title: "SAT (Jazz)",
-      subtitle: "Smooth jazz echoing Saturn's rings",
-      color: "#40E0D0",
-      url: "https://soundcloud.com/tenkforhim",
-      href: "/sat",
-    },
-    {
-      id: "COS",
-      title: "COS (House)",
-      subtitle: "Cosmic house music for interstellar journeys",
-      color: "#0B2D5C",
-      url: "https://soundcloud.com/tenkforhim",
-      href: "/cos",
-    },
-    {
-      id: "YOU",
-      title: "YOU",
-      subtitle: "The mystery awaits...",
-      color: "#FACC15",
-      url: "https://soundcloud.com/tenkforhim",
-      href: "/you",
-    },
-  ];
+/** 10개 대주제 데이터 */
+const planets = [
+  {
+    id: "SUN",
+    title: "SUN (ROCK)",
+    subtitle: "Explosive rock born from the Sun.",
+    color: "#FF4500",
+    url: "https://soundcloud.com/tenkforhim",
+    href: "/sun",
+  },
+  {
+    id: "MER",
+    title: "MER (HIP-HOP)",
+    subtitle: "Speed. Swagger. Mercury flow.",
+    color: "#00BFFF",
+    url: "https://soundcloud.com/tenkforhim",
+    href: "/mer",
+  },
+  {
+    id: "VEN",
+    title: "VEN (R&B)",
+    subtitle: "Velvet R&B under Venus lights.",
+    color: "#800080",
+    url: "https://soundcloud.com/tenkforhim",
+    href: "/ven",
+  },
+  {
+    id: "EAR",
+    title: "EAR (WORLD)",
+    subtitle: "Earth’s rhythm, one heartbeat.",
+    color: "#22C55E",
+    url: "https://soundcloud.com/tenkforhim",
+    href: "/ear",
+  },
+  {
+    id: "AI",
+    title: "AI (EDM)",
+    subtitle: "EDM forged by AI’s pulse.",
+    color: "#C0C0C0",
+    url: "https://soundcloud.com/tenkforhim",
+    href: "/ai",
+  },
+  {
+    id: "MAR",
+    title: "MAR (K-POP)",
+    subtitle: "Red-hot K-Pop ignition.",
+    color: "#FF69B4",
+    url: "https://soundcloud.com/tenkforhim",
+    href: "/mar",
+  },
+  {
+    id: "JUP",
+    title: "JUP (CLASSICAL)",
+    subtitle: "Orchestral power of Jupiter.",
+    color: "#FFD700",
+    url: "https://soundcloud.com/tenkforhim",
+    href: "/jup",
+  },
+  {
+    id: "SAT",
+    title: "SAT (JAZZ)",
+    subtitle: "Saturn’s rings in smooth jazz.",
+    color: "#40E0D0",
+    url: "https://soundcloud.com/tenkforhim",
+    href: "/sat",
+  },
+  {
+    id: "COS",
+    title: "COS (HOUSE)",
+    subtitle: "House beats across the cosmos.",
+    color: "#0B2D5C",
+    url: "https://soundcloud.com/tenkforhim",
+    href: "/cos",
+  },
+  {
+    id: "YOU",
+    title: "YOU",
+    subtitle: "You are the final universe.",
+    color: "#FACC15",
+    url: "https://soundcloud.com/tenkforhim",
+    href: "/you",
+  },
+];
+
 
   return (
     <div className="min-h-screen bg-cosmic-gradient relative overflow-hidden">
