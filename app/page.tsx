@@ -273,76 +273,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Samples */}
-      <section className="relative z-10 py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-glow">
-            Featured Samples
-          </h2>
+  {/* Featured Samples */}
+<section className="relative z-10 py-20 px-4">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-4xl font-bold text-center mb-12 text-glow">
+      Featured Samples
+    </h2>
 
-          {(() => {
-            // 행성별 아이콘(이모지) + 색
-            const planets = [
-              { id: "SUN", icon: "🔥", title: "SUN (Rock)",        subtitle: "Fiery rock anthems inspired by the Sun’s energy",           color: "#FF4500", url: "https://soundcloud.com/2qlev7gnf4pl/little-m/s-DIxyQwsedsz?si=fa38edb33c6f4f1fad055e7848546017&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing", href: "/sun" },
-              { id: "MER", icon: "💨", title: "MER (Hip-Hop)",     subtitle: "Fast-paced hip-hop reflecting Mercury’s speed",             color: "#00BFFF", url: "https://soundcloud.com/tenkforhim", href: "/mer" },
-              { id: "VEN", icon: "💎", title: "VEN (R&B)",         subtitle: "Smooth melodies celebrating Venus",                         color: "#800080", url: "https://soundcloud.com/tenkforhim", href: "/ven" },
-              { id: "EAR", icon: "🌍", title: "EAR (World Music)", subtitle: "Global sounds celebrating Earth’s diversity",               color: "#22C55E", url: "https://soundcloud.com/tenkforhim", href: "/ear" },
-              { id: "AI",  icon: "🤖", title: "AI (EDM)",          subtitle: "Electronic beats powered by artificial intelligence",       color: "#C0C0C0", url: "https://soundcloud.com/tenkforhim", href: "/ai" },
-              { id: "MAR", icon: "🌸", title: "MAR (K-POP)",       subtitle: "Energetic K-Pop inspired by Mars",                          color: "#FF69B4", url: "https://soundcloud.com/tenkforhim", href: "/mar" },
-              { id: "JUP", icon: "🪐", title: "JUP (Classical)",   subtitle: "Majestic orchestral music honoring Jupiter",                 color: "#FFD700", url: "https://soundcloud.com/tenkforhim", href: "/jup" },
-              { id: "SAT", icon: "🎷", title: "SAT (Jazz)",        subtitle: "Smooth jazz echoing Saturn's rings",                         color: "#40E0D0", url: "https://soundcloud.com/tenkforhim", href: "/sat" },
-              { id: "COS", icon: "🌌", title: "COS (House)",       subtitle: "Cosmic house music for interstellar journeys",              color: "#0B2D5C", url: "https://soundcloud.com/tenkforhim", href: "/cos" },
-              { id: "YOU", icon: "✨", title: "YOU",               subtitle: "The mystery awaits...",                                     color: "#FACC15", url: "https://soundcloud.com/tenkforhim", href: "/you" },
-            ];
+    {(() => {
+      const items = [
+        { id:"SUN", title:"SUN (Rock)",        sub:"Fiery rock anthems inspired by the Sun’s energy",           color:"#FF4500", href:"/sun" },
+        { id:"MER", title:"MER (Hip-Hop)",     sub:"Fast-paced hip-hop reflecting Mercury’s speed",             color:"#00BFFF", href:"/mer" },
+        { id:"VEN", title:"VEN (R&B)",         sub:"Smooth melodies celebrating Venus",                         color:"#800080", href:"/ven" },
+        { id:"EAR", title:"EAR (World Music)", sub:"Global sounds celebrating Earth’s diversity",               color:"#22C55E", href:"/ear" },
+        { id:"AI",  title:"AI (EDM)",          sub:"Electronic beats powered by artificial intelligence",       color:"#C0C0C0", href:"/ai" },
+        { id:"MAR", title:"MAR (K-POP)",       sub:"Energetic K-Pop inspired by Mars",                          color:"#FF69B4", href:"/mar" },
+        { id:"JUP", title:"JUP (Classical)",   sub:"Majestic orchestral music honoring Jupiter",                 color:"#FFD700", href:"/jup" },
+        { id:"SAT", title:"SAT (Jazz)",        sub:"Smooth jazz echoing Saturn's rings",                         color:"#40E0D0", href:"/sat" },
+        { id:"COS", title:"COS (House)",       sub:"Cosmic house music for interstellar journeys",              color:"#0B2D5C", href:"/cos" },
+        { id:"YOU", title:"YOU",               sub:"The mystery awaits...",                                     color:"#FACC15", href:"/you" },
+      ];
 
-            const [openId, setOpenId] = useState<string | null>(null);
+      return (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+          {items.map((p) => (
+            <div
+              key={p.id}
+              className="rounded-xl p-5 bg-white/5 ring-1 ring-white/10 hover:ring-white/20 hover:-translate-y-0.5 transition"
+              style={{ boxShadow: `0 0 0 2px ${p.color}33 inset` }}
+            >
+              <div className="flex flex-col justify-between h-full">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2" style={{ color: p.color }}>
+                    {p.title}
+                  </h3>
+                  <p className="text-sm text-white/70 mb-4">{p.sub}</p>
+                </div>
 
-            return (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-                {planets.map((p) => {
-                  const isOpen = openId === p.id;
-                  return (
-                    <div
-                      key={p.id}
-                      className="bg-card/50 backdrop-blur-sm border-2 hover:shadow-lg transition-shadow rounded-xl"
-                      style={{ borderColor: p.color }}
-                    >
-                      <CardContent className="p-4">
-                        {/* 헤더: 아이콘 + 제목 + 보조 링크 */}
-                        <div className="flex items-start justify-between gap-3 mb-1">
-                          <div className="flex items-center gap-2">
-                            <span className="text-2xl leading-none">{p.icon}</span>
-                            <h3 className="text-lg font-bold" style={{ color: p.color }}>
-                              {p.title}
-                            </h3>
-                          </div>
-                          <Link
-                            href={p.href}
-                            className="text-xs text-secondary hover:text-primary underline underline-offset-4"
-                          >
-                            Open
-                          </Link>
-                        </div>
-
-                        <p className="text-sm text-muted mb-3">{p.subtitle}</p>
-
-                        {/* 플레이: 버튼만 동작, 색/글로우 행성별 적용 */}
-                        <CollapsiblePlayer
-                          url={p.url}
-                          open={isOpen}
-                          onToggle={() => setOpenId(isOpen ? null : p.id)}
-                          accent={p.color}
-                          icon="▶"
-                        />
-                      </CardContent>
-                    </div>
-                  );
-                })}
+                <button
+                  onClick={() => window.location.href = p.href}
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-md
+                             text-sm ring-1 ring-white/20 hover:bg-white/10 transition"
+                >
+                  <Play className="h-4 w-4" />
+                  Play Sample
+                </button>
               </div>
-            );
-          })()}
+            </div>
+          ))}
         </div>
-      </section>
+      );
+    })()}
+  </div>
+</section>
 
       {/* Find Us Everywhere */}
       <section className="relative z-10 py-20 px-4">
