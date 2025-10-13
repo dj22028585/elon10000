@@ -7,31 +7,55 @@ import { ExternalLink, Play, Music, Rocket, Feather } from "lucide-react";
 import CosmicBackground from "@/components/cosmic-background";
 import SocialIcons from "@/components/social-icons";
 
-/** 접기식 사운드클라우드 플레이어 */
-function CollapsiblePlayer({ url }: { url: string }) {
+/** 접기식 사운드클라우드 플레이어 (행성별 색/아이콘 적용) */
+function CollapsiblePlayer({
+  url,
+  open,
+  onToggle,
+  accent = "#00BFFF",
+  icon = "▶",
+}: {
+  url: string;
+  open: boolean;
+  onToggle: () => void;
+  accent?: string; // 버튼 그라데이션/글로우 색
+  icon?: React.ReactNode; // 버튼 안 왼쪽에 들어갈 아이콘/이모지
+}) {
   const src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(
     url
   )}&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false`;
 
   return (
-    <details className="rounded-lg bg-input/60 p-3">
-      <summary className="list-none flex items-center gap-2 cursor-pointer px-3 py-2 rounded-md bg-primary/10 hover:bg-primary/20 select-none">
-        <Play className="h-5 w-5" />
-        <span className="font-medium">Play Sample</span>
-      </summary>
-      <div className="mt-3 rounded-lg overflow-hidden">
-        <iframe
-          title="SoundCloud player"
-          width="100%"
-          height="166"
-          scrolling="no"
-          frameBorder="no"
-          allow="autoplay"
-          loading="lazy"
-          src={src}
-        />
-      </div>
-    </details>
+    <div className="rounded-lg bg-input/60 p-3">
+      <button
+        type="button"
+        onClick={onToggle}
+        className="w-full flex items-center justify-center gap-2 cursor-pointer px-3 py-2 rounded-md font-medium"
+        aria-expanded={open}
+        style={{
+          background: `linear-gradient(90deg, ${accent}33, ${accent}55)`,
+          boxShadow: `0 0 12px ${accent}55, inset 0 0 0 1px ${accent}66`,
+        }}
+      >
+        <span className="text-base leading-none">{icon}</span>
+        <span>Play Sample</span>
+      </button>
+
+      {open && (
+        <div className="mt-3 rounded-lg overflow-hidden">
+          <iframe
+            title="SoundCloud player"
+            width="100%"
+            height="166"
+            scrolling="no"
+            frameBorder="no"
+            allow="autoplay"
+            loading="lazy"
+            src={src}
+          />
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -248,37 +272,69 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Samples */}
+          {/* Featured Samples */}
       <section className="relative z-10 py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-glow">
-            Featured Samples
-          </h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-glow">Featured Samples</h2>
 
-          {/* 10개 대주제 공통 카드 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-            {planets.map((p) => (
-              <Link href={p.href} key={p.id} className="block">
-                <Card
-                  className="bg-card/50 backdrop-blur-sm border-2 hover:shadow-lg transition-shadow"
-                  style={{ borderColor: p.color }}
-                >
-                  <CardContent className="p-4">
-                    <h3
-                      className="text-lg font-bold mb-2"
-                      style={{ color: p.color }}
+          {(() => {
+            // 행성별 아이콘(이모지) + 색
+            const planets = [
+              { id: "SUN", icon: "🔥", title: "SUN (Rock)",        subtitle: "Fiery rock anthems inspired by the Sun’s energy",           color: "#FF4500", url: "https://soundcloud.com/2qlev7gnf4pl/little-m/s-DIxyQwsedsz?si=fa38edb33c6f4f1fad055e7848546017&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing", href: "/sun" },
+              { id: "MER", icon: "💰", title: "MER (Hip-Hop)",     subtitle: "Fast-paced hip-hop reflecting Mercury’s speed",             color: "#00BFFF", url: "https://soundcloud.com/tenkforhim", href: "/mer" },
+              { id: "VEN", icon: "💜", title: "VEN (R&B)",         subtitle: "Smooth melodies celebrating Venus",                         color: "#800080", url: "https://soundcloud.com/tenkforhim", href: "/ven" },
+              { id: "EAR", icon: "🌍", title: "EAR (World Music)", subtitle: "Global sounds celebrating Earth’s diversity",               color: "#22C55E", url: "https://soundcloud.com/tenkforhim", href: "/ear" },
+              { id: "AI",  icon: "🤖", title: "AI (EDM)",          subtitle: "Electronic beats powered by artificial intelligence",       color: "#C0C0C0", url: "https://soundcloud.com/tenkforhim", href: "/ai" },
+              { id: "MAR", icon: "🌸", title: "MAR (K-POP)",       subtitle: "Energetic K-Pop inspired by Mars",                          color: "#FF69B4", url: "https://soundcloud.com/tenkforhim", href: "/mar" },
+              { id: "JUP", icon: "🪐", title: "JUP (Classical)",   subtitle: "Majestic orchestral music honoring Jupiter",                 color: "#FFD700", url: "https://soundcloud.com/tenkforhim", href: "/jup" },
+              { id: "SAT", icon: "🎷", title: "SAT (Jazz)",        subtitle: "Smooth jazz echoing Saturn's rings",                         color: "#40E0D0", url: "https://soundcloud.com/tenkforhim", href: "/sat" },
+              { id: "COS", icon: "🌌", title: "COS (House)",       subtitle: "Cosmic house music for interstellar journeys",              color: "#0B2D5C", url: "https://soundcloud.com/tenkforhim", href: "/cos" },
+              { id: "YOU", icon: "🚀", title: "YOU",               subtitle: "The mystery awaits...",                                     color: "#FACC15", url: "https://soundcloud.com/tenkforhim", href: "/you" },
+            ];
+
+            const [openId, setOpenId] = React.useState<string | null>(null);
+
+            return (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                {planets.map((p) => {
+                  const isOpen = openId === p.id;
+                  return (
+                    <div
+                      key={p.id}
+                      className="bg-card/50 backdrop-blur-sm border-2 hover:shadow-lg transition-shadow rounded-xl"
+                      style={{ borderColor: p.color }}
                     >
-                      {p.title}
-                    </h3>
-                    <p className="text-sm text-muted mb-3">{p.subtitle}</p>
-                    <div className="rounded-lg overflow-hidden bg-input">
-                      <CollapsiblePlayer url={p.url} />
+                      <CardContent className="p-4">
+                        {/* 헤더: 아이콘 + 제목 + 보조 링크 */}
+                        <div className="flex items-start justify-between gap-3 mb-1">
+                          <div className="flex items-center gap-2">
+                            <span className="text-2xl leading-none">{p.icon}</span>
+                            <h3 className="text-lg font-bold" style={{ color: p.color }}>
+                              {p.title}
+                            </h3>
+                          </div>
+                          <Link href={p.href} className="text-xs text-secondary hover:text-primary underline underline-offset-4">
+                            Open
+                          </Link>
+                        </div>
+
+                        <p className="text-sm text-muted mb-3">{p.subtitle}</p>
+
+                        {/* 플레이: 버튼만 동작, 색/글로우 행성별 적용 */}
+                        <CollapsiblePlayer
+                          url={p.url}
+                          open={isOpen}
+                          onToggle={() => setOpenId(isOpen ? null : p.id)}
+                          accent={p.color}
+                          icon="▶"
+                        />
+                      </CardContent>
                     </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
+                  );
+                })}
+              </div>
+            );
+          })()}
         </div>
       </section>
 
