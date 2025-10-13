@@ -1,66 +1,66 @@
-"use client"
+"use client";
 
-import Image from "next/image"
+import Image from "next/image";
 
 const subthemes = [
   {
-    title: "Ignition",
-    description: "The mystery begins",
-    image: null, // 커버 없으니 ??? 유지
+    title: "Street X",
+    description: "Grinding boom-bap from the streets.",
+    image: "/covers/mer/B-01-STREET.jpg",
   },
   {
-    title: "Solar Embrace",
-    description: "Radiant warmth and light",
-    image: "/covers/sun/A-02-Solar.jpg",
+    title: "Afterglow",
+    description: "A dreamy trap getaway.",
+    image: "/covers/mer/B-02-Afterglow.jpg",
   },
   {
-    title: "Aureate Throne",
-    description: "Majestic golden energy",
-    image: "/covers/sun/A-03-Aureate.jpg",
+    title: "17:22",
+    description: "Jazzy campus memories in rap.",
+    image: "/covers/mer/B-03-1722.jpg",
   },
   {
-    title: "Red March, Black Ledger",
-    description: "War and reckoning",
-    image: "/covers/sun/A-04-Red.jpg",
+    title: "CASH GOD",
+    description: "High-gloss FLEX anthem.",
+    image: "/covers/mer/B-04-Cash.jpg",
   },
   {
-    title: "Dear Rocket Boy",
-    description: "Letters to the sky",
-    image: "/covers/sun/A-05-Dear.jpg",
+    title: "Ugly Truth",
+    description: "Crunk confession, raw and loud.",
+    image: "/covers/mer/B-05-Ugly.jpg",
   },
   {
-    title: "Chasing Horizons",
-    description: "Beyond the edge of day",
-    image: "/covers/sun/A-06-Chasing.jpg",
+    title: "Ten Shouts",
+    description: "Drill disses, ten shots fired.",
+    image: "/covers/mer/B-06-Ten.jpg",
   },
   {
-    title: "Endless Sunset",
-    description: "Never-ending glow",
-    image: "/covers/sun/A-07-Endless.jpg",
+    title: "Orbit of Us",
+    description: "Melodic, romantic hip-hop.",
+    image: "/covers/mer/B-07-Orbit.jpg",
   },
   {
-    title: "Lucid Reverie",
-    description: "Dreamlike clarity",
-    image: "/covers/sun/A-08-Lucid.jpg",
+    title: "Crown Me Bitch",
+    description: "Women’s rap in full flame.",
+    image: "/covers/mer/B-08-Crown.jpg",
   },
   {
-    title: "Riff & Boogie",
-    description: "Rhythms of freedom",
-    image: "/covers/sun/A-09-Riff.jpg",
+    title: "We Are the One",
+    description: "Latin hip-hop unity.",
+    image: "/covers/mer/B-09-We.jpg",
   },
   {
-    title: "Let’s Rock",
-    description: "???",
-    image: null, // 커버 없으니 ??? 유지
+    title: "Let’s Hip-hop",
+    description: "Machine-made future bounce.",
+    image: null, // 아직 커버 미제작이면 ??? 표시
   },
 ] as const;
 
-export default function SunPage() {
+export default function MerPage() {
   return (
     <div className="min-h-screen bg-cosmic-gradient px-6 py-20">
-      <h1 className="text-5xl font-bold text-center text-primary mb-4">SUN</h1>
+      <h1 className="text-5xl font-bold text-center text-primary mb-4">MER</h1>
       <p className="text-center text-secondary mb-12">
-        Ten sub-themes inspired by the Sun
+        Ten sub-themes reflecting Mercury’s speed
       </p>
 
       {/* 2 x 5 grid (세로 커버에 맞춘 카드) */}
@@ -99,5 +99,5 @@ export default function SunPage() {
         ))}
       </div>
     </div>
-  )
+  );
 }
