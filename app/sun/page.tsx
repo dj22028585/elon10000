@@ -5,8 +5,8 @@ import Image from "next/image"
 const subthemes = [
   {
     title: "Ignition",
-    description: "The mystery begins",
-    image: null, // 커버 없으니 ??? 유지
+    description: "Where the sky learns to burn",
+    image: "/covers/sun/A-01-IGNITION.jpg",
   },
   {
     title: "Solar Embrace",
