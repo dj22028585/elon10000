@@ -35,7 +35,7 @@ const subthemes = [
   },
   {
     title: "???",
-    description: "Melodic, romantic hip-hop.",
+    description: "COMING SOON",
     image: null, // 아직 커버 미제작이면 ??? 표시
   },
   {
