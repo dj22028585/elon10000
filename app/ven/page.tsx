@@ -6,17 +6,17 @@ const subthemes = [
   {
     title: "Letters to Venus",
     description: "Smooth solo R&B confession from Elon.",
-    image: "/covers/mer/C-01-Letter.jpg",
+    image: "/covers/ven/C-01-Letter.jpg",
   },
   {
     title: "Emerald Memory",
     description: "Nostalgic R&B duet glowing in emerald light.",
-    image: "/covers/mer/C-02-Emerald.jpg",
+    image: "/covers/ven/C-02-Emerald.jpg",
   },
   {
     title: "The Starter Wife",
     description: "Soulful R&B elegy of a fading first love.",
-    image: "/covers/mer/C-03-Starter.jpg",
+    image: "/covers/ven/C-03-Starter.jpg",
   },
   {
     title: "???",
