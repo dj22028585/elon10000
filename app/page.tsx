@@ -140,7 +140,7 @@ const planets = [
     id: "YOU",
     title: "YOU",
     subtitle: "You are the final universe.",
-    color: "#FACC15",
+    color: "#8A0303",
     url: "https://soundcloud.com/tenkforhim",
     href: "/you",
   },
