@@ -51,27 +51,33 @@ const subthemes = [
   {
     title: "Let’s Hip-hop",
     description: "Machine-made future bounce.",
-    image: null, // 아직 커버 미제작이면 ??? 표시
+    image: null, // 커버 없음 → ??? 표시
   },
 ] as const;
 
 export default function MerPage() {
   return (
-    <div className="min-h-screen bg-cosmic-gradient px-6 py-20">
-      <h1 className="text-5xl font-bold text-center text-primary mb-4">MER</h1>
-      <p className="text-center text-secondary mb-12">
+    <main className="planet-MER min-h-screen bg-cosmic-gradient px-6 py-20">
+      <h1 className="text-5xl font-bold text-center text-primary mb-2">
+        MER
+      </h1>
+      <p className="subtitle-accent text-center mb-12">
         Ten sub-themes reflecting Mercury’s speed
       </p>
 
-      {/* 2 x 5 grid (세로 커버에 맞춘 카드) */}
+      {/* 2 x 5 Grid (세로 비율 유지) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {subthemes.map((sub, i) => (
           <div
             key={i}
-            className="rounded-xl border border-border/60 bg-card/40 shadow-sm hover:shadow-md transition"
+            className="
+              group rounded-xl overflow-hidden bg-card/40 border border-border/60 
+              shadow-sm transition-all duration-300 
+              hover:shadow-[0_0_30px_var(--planet-accent)] hover:border-[var(--planet-accent)]
+            "
           >
             <div className="p-4">
-              {/* 세로 비율 3:4 박스 */}
+              {/* 세로형 비율 3:4 유지 */}
               <div className="aspect-[3/4] w-full bg-black/30 rounded-md overflow-hidden flex items-center justify-center">
                 {sub.image ? (
                   <Image
@@ -87,17 +93,17 @@ export default function MerPage() {
                 )}
               </div>
 
-              {/* 텍스트는 이미지 아래로 분리 */}
+              {/* 텍스트 영역 */}
               <h3 className="mt-4 text-lg font-semibold text-primary text-center">
                 {sub.title}
               </h3>
-              <p className="mt-1 text-sm text-secondary text-center">
+              <p className="mt-1 text-sm text-center subtitle-accent group-hover:text-[var(--planet-accent)] transition-colors duration-300">
                 {sub.description}
               </p>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </main>
   );
 }
