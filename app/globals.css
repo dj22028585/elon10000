@@ -432,3 +432,49 @@
 .text-glow {
   text-shadow: 0 0 10px rgba(0, 191, 255, 0.8), 0 0 20px rgba(0, 191, 255, 0.5), 0 0 30px rgba(0, 191, 255, 0.3);
 }
+
+
+/* ========= Planet Accent System (append to bottom) ========= */
+
+/* 기본값: TenK 블루를 행성 악센트 기본값으로 */
+:root {
+  --planet-accent: var(--primary);
+}
+
+/* 페이지(섹션) 루트에 붙이는 클래스: 해당 페이지의 행성 포인트 컬러를 주입 */
+.planet-SUN { --planet-accent: var(--sun-rock); --accent: var(--sun-rock); }
+.planet-MER { --planet-accent: var(--mer-hiphop); --accent: var(--mer-hiphop); }
+.planet-VEN { --planet-accent: var(--ven-rnb); --accent: var(--ven-rnb); }
+.planet-EAR { --planet-accent: var(--ear-world); --accent: var(--ear-world); }
+.planet-AI  { --planet-accent: var(--ai-edm); --accent: var(--ai-edm); }
+.planet-MAR { --planet-accent: var(--mar-kpop); --accent: var(--mar-kpop); }
+.planet-JUP { --planet-accent: var(--jup-classical); --accent: var(--jup-classical); }
+.planet-SAT { --planet-accent: var(--sat-jazz); --accent: var(--sat-jazz); }
+.planet-COS { --planet-accent: var(--cos-house); --accent: var(--cos-house); }
+.planet-YOU { --planet-accent: var(--you-secret); --accent: var(--you-secret); }
+
+/* 재사용 유틸: 작은 설명 텍스트는 기본 TenK 블루, 호버/그룹호버 때 행성색으로 전환 */
+.subtitle-accent {
+  color: var(--primary);
+  transition: color .3s ease;
+}
+.subtitle-accent:hover,
+.group:hover .subtitle-accent {
+  color: var(--planet-accent);
+}
+
+/* 재사용 유틸: 카드 테두리/네온 글로우를 행성색으로 */
+.accent-ring-hover {
+  transition: box-shadow .3s ease, outline-color .3s ease;
+}
+.accent-ring-hover:hover {
+  box-shadow: 0 0 30px var(--planet-accent);
+  outline: 2px solid var(--planet-accent);
+  outline-offset: 0; /* 필요 시 조정 */
+}
+
+/* (선택) 접근성: 모션 최소화 환경에서 과한 글로우 비활성화 */
+@media (prefers-reduced-motion: reduce) {
+  .accent-ring-hover { transition: none; }
+  .accent-ring-hover:hover { box-shadow: none; outline: 2px solid var(--planet-accent); }
+}
