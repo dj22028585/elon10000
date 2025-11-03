@@ -50,8 +50,8 @@ const subthemes = [
   },
   {
     title: "Let’s Rock",
-    description: "Coming soon",
-    image: null,
+    description: "They learn rock",
+    image: /covers/sun/A-10-Let.jpg,
   },
 ] as const;
 
