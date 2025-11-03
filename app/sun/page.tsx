@@ -51,7 +51,7 @@ const subthemes = [
   {
     title: "Let’s Rock",
     description: "They learn rock",
-    image: /covers/sun/A-10-Let.jpg,
+    image: "/covers/sun/A-10-Let.jpg",
   },
 ] as const;
 
