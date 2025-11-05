@@ -174,7 +174,7 @@ const planets = [
             </button>
           </div>
           <p className="text-lg text-secondary mb-8">
-            For Elon Musk, an AI+Human odyssey of sound and poetry.
+            One human. AI tools. 10,000 songs. Built as a thank-you.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
