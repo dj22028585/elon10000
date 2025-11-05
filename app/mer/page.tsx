@@ -51,7 +51,7 @@ const subthemes = [
   {
     title: "Let’s Hip-hop",
     description: "Machine-made future bounce.",
-    image: null, // 커버 없음 → ??? 표시
+    image: "/covers/mer/B-10-Let.jpg",
   },
 ] as const;
 
