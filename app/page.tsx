@@ -368,9 +368,8 @@ const planets = [
               </h2>
               <div className="prose prose-invert max-w-none text-center">
                 <p className="text-lg leading-relaxed">
-                  ELON:10,000 is an AI+Human collaboration dedicated to Elon
-                  Musk, creating 10,000 songs and 10,000 poems across ten cosmic
-                  themes. A living legend in progress.
+              ELON:10,000 is an AI+Human collaboration creating 10,000 songs and 10,000 poems 
+across ten planetary themes—dedicated to Elon Musk and the era he helped build.
                 </p>
               </div>
             </CardContent>
