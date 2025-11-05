@@ -160,7 +160,7 @@ const planets = [
           <p className="text-sm text-secondary mb-2">by TenKforHim</p>
           <div className="flex items-center justify-center gap-2 mb-2">
             <p className="text-xl md:text-2xl text-foreground">
-              10,000 songs · 10,000 poems · honoring one living legend
+              10,000 songs · 10,000 poems · for Elon Musk
             </p>
             <button
               onClick={() =>
