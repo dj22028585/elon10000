@@ -382,7 +382,7 @@ across ten planetary themes—dedicated to Elon Musk and the era he helped build
         <div className="max-w-6xl mx-auto text-center">
           <div className="h-px bg-gradient-to-r from-transparent via-primary to-transparent mb-4" />
           <p className="text-sm text-muted">
-            © TenKforHim — A living legend in progress
+            © TenKforHim — 10,000 songs for Elon Musk
           </p>
         </div>
       </footer>
