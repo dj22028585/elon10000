@@ -12,7 +12,7 @@ import {
   MessageSquare,
 } from "lucide-react"
 // X, TikTok, Pinterest, Rocket 은 react-icons 사용
-import { FaXTwitter, FaTiktok, FaPinterest, FaRocket } from "react-icons/fa6"
+import { FaTwitter as FaXTwitter, FaTiktok, FaPinterest, FaRocket } from "react-icons/fa";
 
 const LINKS = {
   youtube: "https://www.youtube.com/@TenKforHim",
