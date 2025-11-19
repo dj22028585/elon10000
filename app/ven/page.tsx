@@ -19,9 +19,9 @@ const subthemes = [
     image: "/covers/ven/C-03-Starter.jpg",
   },
   {
-    title: "???",
-    description: "COMING SOON",
-    image: null,
+    title: "If Thornfield Burns",
+    description: "A stately R&B vow shaped by loss, loyalty, and old-world silence.",
+    image: "/covers/ven/C-04-If.jpg",
   },
   {
     title: "???",
