@@ -24,14 +24,14 @@ const subthemes = [
     image: "/covers/ven/C-04-If.jpg",
   },
   {
-    title: "???",
-    description: "COMING SOON",
-    image: null,
+    title: "False Dawn",
+    description: "Two lights met beneath the water—brilliantly and sincerely.",
+    image: "/covers/ven/C-05-False.jpg",
   },
   {
-    title: "???",
-    description: "COMING SOON",
-    image: null,
+    title: "Player of Games",
+    description: "Love as a game. Space as the board. Two players, no rules.",
+    image: "/covers/ven/C-06-Play.jpg",
   },
   {
     title: "???",
