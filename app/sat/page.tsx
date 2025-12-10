@@ -20,7 +20,7 @@ export default function SatPage() {
     <main
       className="planet-SAT min-h-screen bg-cosmic-gradient px-6 py-20"
       // ✅ 전역 설정과 무관하게 이 페이지만 에메랄드 네온 사용
-      style={{ ["--planet-accent" as any]: "#41FF8F" }}
+      style={{ "--planet-accent": "#00ced1" }}
     >
       <h1 className="text-5xl font-bold text-center text-primary mb-2">
         SAT
