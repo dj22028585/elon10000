@@ -11,8 +11,8 @@ type Subtheme = {
 
 // 나중에 진짜 타이틀/설명/이미지 정해지면 여기만 수정하면 됨
 const subthemes: Subtheme[] = [
-  { title: "Cradle", description: "COMING SOON", image: "/covers/ear/D-01-C.jpg" },
-  { title: "Neighbors", description: "COMING SOON", image: null },
+  { title: "Cradle", description: "A portrait of Earth before anyone was there to remember it.", image: "/covers/ear/D-01-C.jpg" },
+  { title: "Neighbors", description: "They noticed us before we noticed them.", image: "/covers/ear/D-02-N.jpg" },
   { title: "???", description: "COMING SOON", image: null },
   { title: "???", description: "COMING SOON", image: null },
   { title: "???", description: "COMING SOON", image: null },
