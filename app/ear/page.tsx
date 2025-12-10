@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import type { CSSProperties } from "react";
 
 const subthemes = [
   { title: "???", description: "COMING SOON", image: null },
@@ -17,7 +18,11 @@ const subthemes = [
 
 export default function EarPage() {
   return (
-    <main className="planet-EAR min-h-screen bg-cosmic-gradient px-6 py-20">
+    <main
+      className="planet-EAR min-h-screen bg-cosmic-gradient px-6 py-20"
+      // 여기 한 줄이 핵심: EAR 페이지 안에서만 네온 컬러를 '초록'으로 강제
+      style={{ "--planet-accent": "#41ff8f" } as CSSProperties}
+    >
       <h1 className="text-5xl font-bold text-center text-primary mb-2">
         EAR
       </h1>
