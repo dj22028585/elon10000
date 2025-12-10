@@ -1,8 +1,18 @@
 "use client";
 
 import Image from "next/image";
+import type { CSSProperties } from "react";
 
-const subthemes = [
+type Subtheme = {
+  title: string;
+  description: string;
+  image?: string | null;
+};
+
+// 나중에 진짜 타이틀/설명/이미지 정해지면 여기만 수정하면 됨
+const subthemes: Subtheme[] = [
+  { title: "Cradle", description: "COMING SOON", image: "/covers/ear/D-01-C.jpg" },
+  { title: "Neighbors", description: "COMING SOON", image: null },
   { title: "???", description: "COMING SOON", image: null },
   { title: "???", description: "COMING SOON", image: null },
   { title: "???", description: "COMING SOON", image: null },
@@ -11,16 +21,16 @@ const subthemes = [
   { title: "???", description: "COMING SOON", image: null },
   { title: "???", description: "COMING SOON", image: null },
   { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-] as const;
+];
+
+// EAR 전용 네온 컬러 (홈 화면 EAR 카드랑 맞춘 초록)
+const EAR_ACCENT = "#41ff8f";
 
 export default function EarPage() {
   return (
     <main
       className="planet-EAR min-h-screen bg-cosmic-gradient px-6 py-20"
-      // 여기 한 줄이 핵심: EAR 페이지 안에서만 네온 컬러를 '초록'으로 강제
-      style={{ "--planet-accent": "#41ff8f" } as CSSProperties}
+      style={{ "--planet-accent": EAR_ACCENT } as CSSProperties}
     >
       <h1 className="text-5xl font-bold text-center text-primary mb-2">
         EAR
