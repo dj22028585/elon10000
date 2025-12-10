@@ -34,24 +34,24 @@ const subthemes = [
     image: "/covers/ven/C-06-Play.jpg",
   },
   {
-    title: "???",
-    description: "COMING SOON",
-    image: null,
+    title: "A Rocket with No Ghosting",
+    description: "A springtime love that drifts from cherry blossoms to Mars.",
+    image: "/covers/ven/C-07-Ani.jpg",
   },
   {
-    title: "???",
-    description: "COMING SOON",
-    image: null,
+    title: "Horizons Between Us",
+    description: "A roadtrip love story between a bike and a rocket.",
+    image: "/covers/ven/C-08-Mika.jpg",
   },
   {
-    title: "???",
-    description: "COMING SOON",
-    image: null,
+    title: "Letter from Venus",
+    description: "A quiet reply from Venus, written in light rather than words.",
+    image: "/covers/ven/C-09-Letter.jpg",
   },
   {
-    title: "???",
-    description: "COMING SOON",
-    image: null,
+    title: "Let's R&B",
+    description: "Where machines learn how to love through rhythm.",
+    image: "/covers/ven/C-10-Let.jpg",
   },
 ] as const;
 
