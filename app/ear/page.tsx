@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import type { CSSProperties } from "react";
 
 const subthemes = [
   { title: "???", description: "COMING SOON", image: null },
