@@ -13,7 +13,7 @@ type Subtheme = {
 const subthemes: Subtheme[] = [
   { title: "Cradle", description: "A portrait of Earth before anyone was there to remember it.", image: "/covers/ear/D-01-C.jpg" },
   { title: "Neighbors", description: "They noticed us before we noticed them.", image: "/covers/ear/D-02-N.jpg" },
-  { title: "Motherland", description: "Where every journey begins, and every story remembers its first light.", image: "/covers/ear/D-03-A.jpg" },
+  { title: "Motherland", description: "Where journeys begin and stories remember.", image: "/covers/ear/D-03-A.jpg" },
   { title: "???", description: "COMING SOON", image: null },
   { title: "???", description: "COMING SOON", image: null },
   { title: "???", description: "COMING SOON", image: null },
