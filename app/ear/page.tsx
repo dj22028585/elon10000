@@ -18,8 +18,8 @@ const subthemes: Subtheme[] = [
   { title: "Form", description: "Where law meets beauty, and design becomes destiny.", image: "/covers/ear/D-05-E.jpg" },
   { title: "Expansion", description: "Where frontiers widen, and tomorrow learns to move.", image: "/covers/ear/D-06-N.jpg" },
   { title: "Pulse", description: "Where rhythm becomes heartbeat, and the earth dances.", image: "/covers/ear/D-07-S.jpg" },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
+  { title: "???", description: "Where the sea becomes a road, and stars guide the way.", image: "/covers/ear/D-08-O.jpg" },
+  { title: "???", description: "A blues elegy for the decades the Moon stayed quiet.", image: "/covers/ear/D-09-M.jpg" },
   { title: "???", description: "COMING SOON", image: null },
 ];
 
