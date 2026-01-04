@@ -20,7 +20,7 @@ const subthemes: Subtheme[] = [
   { title: "Pulse", description: "Where rhythm becomes heartbeat, and the earth dances.", image: "/covers/ear/D-07-S.jpg" },
   { title: "Voyage", description: "Where the sea becomes a road, and stars guide the way.", image: "/covers/ear/D-08-O.jpg" },
   { title: "Silence", description: "A blues elegy for the decades the Moon stayed quiet.", image: "/covers/ear/D-09-M.jpg" },
-  { title: "???", description: "COMING SOON", image: null },
+  { title: "Let's World Music", description: "When borders fade, the chorus begins.", image: "/covers/ear/D-10-Let.jpg" },
 ];
 
 // EAR 전용 네온 컬러 (홈 화면 EAR 카드랑 맞춘 초록)
