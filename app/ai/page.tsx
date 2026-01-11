@@ -4,14 +4,14 @@ import Image from "next/image";
 
 const subthemes = [
   { title: "DOGE", description: "wow. much rocket. very destiny.", image: "/covers/ai/E-1-1.jpg" },
-  { title: "GAMESTONK!!", description: "One screenshot. One subreddit. One financial crisis (for shorts).", image: "/covers/ai/E-2-2.jpg" },
-  { title: "NOT-A-FLAMETHROWER", description: "It’s not a flamethrower. It’s a ‘warm air encouragement device.", image: "/covers/ai/E-3-3.jpg" },
+  { title: "GAMESTONK!!", description: "One screenshot. One subreddit. Shorts panic.", image: "/covers/ai/E-2-2.jpg" },
+  { title: "NOT-A-FLAMETHROWER", description: "It’s not a flamethrower. It’s a warm air encouragement device.", image: "/covers/ai/E-3-3.jpg" },
   { title: "S3XY SHORT SHORTS", description: "Dress code: confidence. Fabric: chaos.", image:  "/covers/ai/E-4-4.jpg" },
   { title: "USE SIGNAL", description: "If you can read this, you’re already encrypted.", image:  "/covers/ai/E-5-5.jpg" },
-  { title: "CAGE MATCH", description: "Send location. Bring protein. No excuses.", image:  "/covers/ai/E-6-6.jpg" },
+  { title: "CAGE MATCH", description: "Send location. Bring gloves.", image:  "/covers/ai/E-6-6.jpg" },
   { title: "TECHNOKING", description: "CEO by day, warehouse rave deity by night.", image:  "/covers/ai/E-7-7.jpg" },
   { title: "OPTIMUS DEMO", description: "If it glitches on stage, it’s officially a feature.", image:  "/covers/ai/E-8-8.jpg" },
-  { title: "BURNT HAIR", description: "Repugnant desire, bottled—then sold out like it’s couture.", image:  "/covers/ai/E-9-9.jpg" },
+  { title: "BURNT HAIR", description: "Repugnant desire, bottled, then sold out like it’s couture.", image:  "/covers/ai/E-9-9.jpg" },
   { title: "Let's EDM", description: "The sink dropped. The bass dropped harder.", image:  "/covers/ai/E-10-Let.jpg" },
 ] as const;
 
