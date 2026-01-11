@@ -12,7 +12,7 @@ const subthemes = [
   { title: "TECHNOKING", description: "COMING SOON", image:  "/covers/ai/E-7-7.jpg" },
   { title: "OPTIMUS DEMO", description: "COMING SOON", image:  "/covers/ai/E-8-8.jpg" },
   { title: "BURNT HAIR", description: "COMING SOON", image:  "/covers/ai/E-9-9.jpg" },
-  { title: "Let's EDM", description: "COMING SOON", image:  "/covers/ai/E-10-10.jpg" },
+  { title: "Let's EDM", description: "COMING SOON", image:  "/covers/ai/E-10-Let.jpg" },
 ] as const;
 
 export default function AiPage() {
