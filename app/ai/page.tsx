@@ -3,16 +3,16 @@
 import Image from "next/image";
 
 const subthemes = [
-  { title: "DOGE", description: "COMING SOON", image: "/covers/ear/E-1-1.jpg" },
-  { title: "GAMESTONK!!", description: "COMING SOON", image: "/covers/ear/E-2-2.jpg" },
-  { title: "NOT-A-FLAMETHROWER", description: "COMING SOON", image: "/covers/ear/E-3-3.jpg" },
-  { title: "S3XY SHORT SHORTS", description: "COMING SOON", image:  "/covers/ear/E-4-4.jpg" },
-  { title: "USE SIGNAL", description: "COMING SOON", image:  "/covers/ear/E-5-5.jpg" },
-  { title: "CAGE MATCH", description: "COMING SOON", image:  "/covers/ear/E-6-6.jpg" },
-  { title: "TECHNOKING", description: "COMING SOON", image:  "/covers/ear/E-7-7.jpg" },
-  { title: "OPTIMUS DEMO", description: "COMING SOON", image:  "/covers/ear/E-8-8.jpg" },
-  { title: "BURNT HAIR", description: "COMING SOON", image:  "/covers/ear/E-9-9.jpg" },
-  { title: "Let's EDM", description: "COMING SOON", image:  "/covers/ear/E-10-10.jpg" },
+  { title: "DOGE", description: "COMING SOON", image: "/covers/ai/E-1-1.jpg" },
+  { title: "GAMESTONK!!", description: "COMING SOON", image: "/covers/ai/E-2-2.jpg" },
+  { title: "NOT-A-FLAMETHROWER", description: "COMING SOON", image: "/covers/ai/E-3-3.jpg" },
+  { title: "S3XY SHORT SHORTS", description: "COMING SOON", image:  "/covers/ai/E-4-4.jpg" },
+  { title: "USE SIGNAL", description: "COMING SOON", image:  "/covers/ai/E-5-5.jpg" },
+  { title: "CAGE MATCH", description: "COMING SOON", image:  "/covers/ai/E-6-6.jpg" },
+  { title: "TECHNOKING", description: "COMING SOON", image:  "/covers/ai/E-7-7.jpg" },
+  { title: "OPTIMUS DEMO", description: "COMING SOON", image:  "/covers/ai/E-8-8.jpg" },
+  { title: "BURNT HAIR", description: "COMING SOON", image:  "/covers/ai/E-9-9.jpg" },
+  { title: "Let's EDM", description: "COMING SOON", image:  "/covers/ai/E-10-10.jpg" },
 ] as const;
 
 export default function AiPage() {
