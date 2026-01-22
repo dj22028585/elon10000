@@ -3,16 +3,16 @@
 import Image from "next/image";
 
 const subthemes = [
-  { title: "My Little Pilot", description: "Freedom at full throttle.", image: null },
-  { title: "My Little Player", description: "Insert Coin, Master Reality.", image: null },
-  { title: "My Little Architect", description: "5 Kilobytes of infinite dreams.", image: null },
-  { title: "My Little Survivor", description: "Survival is the first lesson.", image: null },
-  { title: "My Little Hitchhiker", description: "Don't Panic. Just ask.", image: null },
-  { title: "My Little Wanderer", description: "A one-way ticket to destiny.", image: null },
-  { title: "My Little Promoter", description: "Tonight's rent, tomorrow's empire.", image: null },
-  { title: "My Little Futurist", description: "Thinking about electric.", image: null },
-  { title: "My Little Mechanic", description: "Broken roads, unbreakable grit.", image: null },
-  { title: "Let's K-POP", description: "Dancing on the Red Planet.", image: null },
+  { title: "My Little Pilot", description: "Freedom at full throttle.", image: "/covers/mar/F-01-1.jpg"},
+  { title: "My Little Player", description: "Insert Coin, Master Reality.", image: "/covers/mar/F-02-2.jpg" },
+  { title: "My Little Architect", description: "5 Kilobytes of infinite dreams.", image: "/covers/mar/F-03-3.jpg" },
+  { title: "My Little Survivor", description: "Survival is the first lesson.", image: "/covers/mar/F-04-4.jpg" },
+  { title: "My Little Hitchhiker", description: "Don't Panic. Just ask.", image: "/covers/mar/F-05-5.jpg" },
+  { title: "My Little Wanderer", description: "A one-way ticket to destiny.", image: "/covers/mar/F-06-6.jpg" },
+  { title: "My Little Promoter", description: "Tonight's rent, tomorrow's empire.", image: "/covers/mar/F-07-7.jpg" },
+  { title: "My Little Futurist", description: "Thinking about electric.", image: "/covers/mar/F-08-8.jpg" },
+  { title: "My Little Mechanic", description: "Broken roads, unbreakable grit.", image: "/covers/mar/F-09-9.jpg" },
+  { title: "Let's K-POP", description: "Dancing on the Red Planet.", image: "/covers/mar/F-10-10.jpg" },
 ] as const;
 
 export default function MarPage() {
