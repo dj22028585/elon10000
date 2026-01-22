@@ -3,16 +3,16 @@
 import Image from "next/image";
 
 const subthemes = [
-  { title: "My Little Pilot", description: "Freedom is not taught; it is ignited the moment you twist the throttle.", image: null },
-  { title: "My Little Player", description: "Before rewriting the world, he mastered the rules of the game.", image: null },
-  { title: "My Little Architect", description: "The first architecture of a world built from imagination into code.", image: null },
-  { title: "My Little Survivor", description: "The wild holds no mercy; to protect your own, you must learn to stand your ground.", image: null },
-  { title: "My Little Hitchhiker", description: "More vital than the answer is the courage to ask the universe the right question.", image: null },
-  { title: "My Little Wanderer", description: "Leaving the safety of home for the unknown, fueled only by the audacity of hope.", image: null },
-  { title: "My Little Promoter", description: "Gather the crowd, set the stage; capital is the fuel that turns dreams into reality.", image: null },
-  { title: "My Little Futurist", description: "A first love who saw the future of electric cars while the world slept in the present.", image: null },
-  { title: "My Little Mechanic", description: "Like fixing a broken engine on the road, true engineering is solving the impossible with your own hands.", image: null },
-  { title: "Let's K-POP", description: "The boy's dream comes alive, dancing with a new humanity on the stage of Mars.", image: null },
+  { title: "My Little Pilot", description: "Freedom at full throttle.", image: null },
+  { title: "My Little Player", description: "Insert Coin, Master Reality.", image: null },
+  { title: "My Little Architect", description: "5 Kilobytes of infinite dreams.", image: null },
+  { title: "My Little Survivor", description: "Survival is the first lesson.", image: null },
+  { title: "My Little Hitchhiker", description: "Don't Panic. Just ask.", image: null },
+  { title: "My Little Wanderer", description: "A one-way ticket to destiny.", image: null },
+  { title: "My Little Promoter", description: "Tonight's rent, tomorrow's empire.", image: null },
+  { title: "My Little Futurist", description: "Thinking about electric.", image: null },
+  { title: "My Little Mechanic", description: "Broken roads, unbreakable grit.", image: null },
+  { title: "Let's K-POP", description: "Dancing on the Red Planet.", image: null },
 ] as const;
 
 export default function MarPage() {
