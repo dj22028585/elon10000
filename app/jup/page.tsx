@@ -3,16 +3,16 @@
 import Image from "next/image";
 
 const subthemes = [
-  { title: "Dungeons & Musk", description: "When the die is cast, ambition composes its own destiny.", image: null },
-  { title: "Muskilization", description: "History is not written; it is built, turn by turn.", image: null },
-  { title: "Musk Arena", description: "A high-velocity symphony where reflexes meet hubris.", image: null },
-  { title: "MuskShock", description: "An Art Deco requiem echoing through a drowned utopia.", image: null },
-  { title: "Elonout", description: "Beyond the ashes, the only path is the horizon.", image: null },
-  { title: "Musk Effect", description: "Not force, but the ripple of decision moves the galaxy.", image: null },
-  { title: "Saint’s Musk ", description: "In the absence of law, chaos wears the crown.", image: null },
-  { title: "Polymuskia", description: "The simpler the shape, the sharper the strategy.", image: null },
-  { title: "Elon Ring", description: "Upon the debris of a broken throne, a new ring is inscribed.", image: null },
-  { title: "Let's Classical", description: "It began with a pixel, and ended with a symphony.", image: null },
+  { title: "Dungeons & Musk", description: "When the die is cast, ambition composes its own destiny.", image: "/covers/jup/G-01-1.jpg", },
+  { title: "Muskilization", description: "History is not written; it is built, turn by turn.", image: "/covers/jup/G-02-2.jpg", },
+  { title: "Musk Arena", description: "A high-velocity symphony where reflexes meet hubris.", image: "/covers/jup/G-03-3.jpg", },
+  { title: "MuskShock", description: "An Art Deco requiem echoing through a drowned utopia.", image: "/covers/jup/G-04-4.jpg", },
+  { title: "Elonout", description: "Beyond the ashes, the only path is the horizon.", image: "/covers/jup/G-05-5.jpg", },
+  { title: "Musk Effect", description: "Not force, but the ripple of decision moves the galaxy.", image: "/covers/jup/G-06-6.jpg", },
+  { title: "Saint’s Musk ", description: "In the absence of law, chaos wears the crown.", image: "/covers/jup/G-07-7.jpg", },
+  { title: "Polymuskia", description: "The simpler the shape, the sharper the strategy.", image: "/covers/jup/G-08-8.jpg", },
+  { title: "Elon Ring", description: "Upon the debris of a broken throne, a new ring is inscribed.", image: "/covers/jup/G-09-9.jpg", },
+  { title: "Let's Classical", description: "It began with a pixel, and ended with a symphony.", image: "/covers/jup/G-10-10.jpg", },
 ] as const;
 
 export default function JupPage() {
