@@ -3,16 +3,16 @@
 import Image from "next/image";
 
 const subthemes = [
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
+  { title: "Dungeons & Musk", description: "When the die is cast, ambition composes its own destiny.", image: null },
+  { title: "Muskilization", description: "History is not written; it is built, turn by turn.", image: null },
+  { title: "Musk Arena", description: "A high-velocity symphony where reflexes meet hubris.", image: null },
+  { title: "MuskShock", description: "An Art Deco requiem echoing through a drowned utopia.", image: null },
+  { title: "Elonout", description: "Beyond the ashes, the only path is the horizon.", image: null },
+  { title: "Musk Effect", description: "Not force, but the ripple of decision moves the galaxy.", image: null },
+  { title: "Saint’s Musk ", description: "In the absence of law, chaos wears the crown.", image: null },
+  { title: "Polymuskia", description: "The simpler the shape, the sharper the strategy.", image: null },
+  { title: "Elon Ring", description: "Upon the debris of a broken throne, a new ring is inscribed.", image: null },
+  { title: "Let's Classical", description: "It began with a pixel, and ended with a symphony.", image: null },
 ] as const;
 
 export default function JupPage() {
