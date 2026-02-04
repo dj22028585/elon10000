@@ -12,7 +12,7 @@ const subthemes = [
   { title: "胡蝶之夢", description: "A soft world that forgets which side is real.", image: "/covers/sat/H-07-7.jpg", },
   { title: "BIG BUSINESS", description: "Marble quiet. Ink that bites.", image: "/covers/sat/H-08-8.jpg", },
   { title: "Consciousness", description: "A hundred sparks learning one name.", image: "/covers/sat/H-09-9.jpg",},
-  { title: "Let’s Jazz", description: "Cold metal, warm warning.", image: "/covers/sat/H-010-10.jpg", },
+  { title: "Let’s Jazz", description: "Cold metal, warm warning.", image: "/covers/sat/H-10-10.jpg", },
 ] as const;
 
 export default function SatPage() {
