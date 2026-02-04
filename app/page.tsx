@@ -227,14 +227,14 @@ const planets = [
               </div>
               <div className="space-y-4 max-w-lg mx-auto">
                 <div className="flex justify-between text-xl">
-                  <span>7000 / 10,000</span>
-                  <span className="text-primary font-bold text-glow">(70%)</span>
+                  <span>8000 / 10,000</span>
+                  <span className="text-primary font-bold text-glow">(80%)</span>
                 </div>
                 <div className="relative w-full bg-input rounded-full h-4">
                   <div
                     className="h-4 rounded-full cosmic-glow relative"
                     style={{
-                      width: "70%",
+                      width: "80%",
                       background: "linear-gradient(90deg, #00bfff, #1e90ff)",
                     }}
                   >
