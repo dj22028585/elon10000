@@ -3,16 +3,16 @@
 import Image from "next/image";
 
 const subthemes = [
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
+  { title: "Curiosity", description: "Ask the waves, Where are you?", image: "/covers/sat/H-01-1.jpg", },
+  { title: "First Principles", description: "A clean room where truth is rebuilt.", image:"/covers/sat/H-02-2.jpg", },
+  { title: "D", description: "Delete until only the human breath remains.", image: "/covers/sat/H-03-3.jpg", },
+  { title: "REDLINE", description: "Speed with its jaw clenched.", image: "/covers/sat/H-04-4.jpg", },
+  { title: "Risk", description: "Beauty with a cracked seal.", image: "/covers/sat/H-05-5.jpg", },
+  { title: "Free Speech", description: "Street gospel in a brass throat.", image: "/covers/sat/H-06-6.jpg", },
+  { title: "胡蝶之夢", description: "A soft world that forgets which side is real.", image: "/covers/sat/H-07-7.jpg", },
+  { title: "BIG BUSINESS", description: "Marble quiet. Ink that bites.", image: "/covers/sat/H-08-8.jpg", },
+  { title: "Consciousness", description: "A hundred sparks learning one name.", image: "/covers/sat/H-09-9.jpg",},
+  { title: "Let’s Jazz", description: "Cold metal, warm warning.", image: "/covers/sat/H-010-10.jpg", },
 ] as const;
 
 export default function SatPage() {
