@@ -3,16 +3,16 @@
 import Image from "next/image";
 
 const subthemes = [
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
+  { title: "Zip2", description: "COMING SOON", image: null },
+  { title: "PayPal", description: "COMING SOON", image: null },
+  { title: "SpaceX", description: "COMING SOON", image: null },
+  { title: "Tesla", description: "COMING SOON", image: null },
+  { title: "Ad Astra", description: "COMING SOON", image: null },
+  { title: "Neuralink", description: "COMING SOON", image: null },
+  { title: "The Boring Company", description: "COMING SOON", image: null },
+  { title: "X", description: "COMING SOON", image: null },
+  { title: "xAI", description: "COMING SOON", image: null },
+  { title: "Let's House", description: "COMING SOON", image: null },
 ] as const;
 
 export default function CosPage() {
