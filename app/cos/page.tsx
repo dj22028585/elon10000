@@ -12,7 +12,7 @@ const subthemes = [
   { title: "The Boring Company", description: "Solve the problem of soul-destroying traffic.", image: "/covers/cos/I-07-7.jpg"  },
   { title: "X", description: "X is the global town square.", image: "/covers/cos/I-08-8.jpg"  },
   { title: "xAI", description: "To understand the true nature of the universe.", image: "/covers/cos/I-09-9.jpg"  },
-  { title: "Let's House", description: "Remove unnecessary regulations to unlock economic freedom.", image: "/covers/cos/I-10-10.jpg"  },
+  { title: "Let's House", description: "Slash red tape to unleash freedom.", image: "/covers/cos/I-10-10.jpg"  },
 ] as const;
 
 export default function CosPage() {
