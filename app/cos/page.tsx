@@ -3,16 +3,16 @@
 import Image from "next/image";
 
 const subthemes = [
-  { title: "Zip2", description: "COMING SOON", image: null },
-  { title: "PayPal", description: "COMING SOON", image: null },
-  { title: "SpaceX", description: "COMING SOON", image: null },
-  { title: "Tesla", description: "COMING SOON", image: null },
-  { title: "Ad Astra", description: "COMING SOON", image: null },
-  { title: "Neuralink", description: "COMING SOON", image: null },
-  { title: "The Boring Company", description: "COMING SOON", image: null },
-  { title: "X", description: "COMING SOON", image: null },
-  { title: "xAI", description: "COMING SOON", image: null },
-  { title: "Let's House", description: "COMING SOON", image: null },
+  { title: "Zip2", description: "We help media companies get online.", image: null },
+  { title: "PayPal", description: "Creating a new world currency.", image: null },
+  { title: "SpaceX", description: "To make life multi-planetary.", image: null },
+  { title: "Tesla", description: "To accelerate the world's transition to sustainable energy.", image: null },
+  { title: "Ad Astra", description: "Teach to the problem, not the tool.", image: null },
+  { title: "Neuralink", description: "Create a generalized brain interface to restore autonomy.", image: null },
+  { title: "The Boring Company", description: "Solve the problem of soul-destroying traffic.", image: null },
+  { title: "X", description: "X is the global town square.", image: null },
+  { title: "xAI", description: "To understand the true nature of the universe.", image: null },
+  { title: "Let's House", description: "Remove unnecessary regulations to unlock economic freedom.", image: null },
 ] as const;
 
 export default function CosPage() {
