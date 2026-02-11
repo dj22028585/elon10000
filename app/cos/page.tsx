@@ -3,16 +3,16 @@
 import Image from "next/image";
 
 const subthemes = [
-  { title: "Zip2", description: "We help media companies get online.", image: null },
-  { title: "PayPal", description: "Creating a new world currency.", image: null },
-  { title: "SpaceX", description: "To make life multi-planetary.", image: null },
-  { title: "Tesla", description: "To accelerate the world's transition to sustainable energy.", image: null },
-  { title: "Ad Astra", description: "Teach to the problem, not the tool.", image: null },
-  { title: "Neuralink", description: "Create a generalized brain interface to restore autonomy.", image: null },
-  { title: "The Boring Company", description: "Solve the problem of soul-destroying traffic.", image: null },
-  { title: "X", description: "X is the global town square.", image: null },
-  { title: "xAI", description: "To understand the true nature of the universe.", image: null },
-  { title: "Let's House", description: "Remove unnecessary regulations to unlock economic freedom.", image: null },
+  { title: "Zip2", description: "We help media companies get online.", image: "/covers/COS/I-01-1.jpg" },
+  { title: "PayPal", description: "Creating a new world currency.", image: "/covers/COS/I-02-2.jpg"  },
+  { title: "SpaceX", description: "To make life multi-planetary.", image: "/covers/COS/I-03-3.jpg"  },
+  { title: "Tesla", description: "To accelerate the world's transition to sustainable energy.", image: "/covers/COS/I-04-4.jpg"  },
+  { title: "Ad Astra", description: "Teach to the problem, not the tool.", image: "/covers/COS/I-05-5.jpg"  },
+  { title: "Neuralink", description: "Create a generalized brain interface to restore autonomy.", image: "/covers/COS/I-06-6.jpg"  },
+  { title: "The Boring Company", description: "Solve the problem of soul-destroying traffic.", image: "/covers/COS/I-07-7.jpg"  },
+  { title: "X", description: "X is the global town square.", image: "/covers/COS/I-08-8.jpg"  },
+  { title: "xAI", description: "To understand the true nature of the universe.", image: "/covers/COS/I-09-9.jpg"  },
+  { title: "Let's House", description: "Remove unnecessary regulations to unlock economic freedom.", image: "/covers/COS/I-10-10.jpg"  },
 ] as const;
 
 export default function CosPage() {
