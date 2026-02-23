@@ -3,16 +3,16 @@
 import Image from "next/image";
 
 const subthemes = [
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
-  { title: "???", description: "COMING SOON", image: null },
+  { title: "His Life", description: "From first breath to the final frontier.", image: null },
+  { title: "His Roots", description: "The deep soil beneath a tree meant for the stars.", image: null },
+  { title: "His Children", description: "The living reasons the future must be built.", image: null },
+  { title: "His Partners", description: "Those who shared the weight of impossible dreams.", image: null },
+  { title: "His Books", description: "Galaxies folded between pages.", image: null },
+  { title: "His Taste", description: "The frequencies, flavors, and frames of a restless soul.", image: null },
+  { title: "His Body", description: "An anatomical symphony of an immortal vessel.", image: null },
+  { title: "His Pain", description: "Where words surrender to scars.", image: null },
+  { title: "His Modes", description: "A kaleidoscope of faces he never explained.", image: null },
+  { title: "Let's Live", description: "Ten thousand ways to say one thing.", image: null },
 ] as const;
 
 export default function YouPage() {
