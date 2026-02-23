@@ -4,14 +4,14 @@ import Image from "next/image";
 
 const subthemes = [
   { title: "His Life", description: "From first breath to the final frontier.", image: "/covers/you/J-01-1.jpg" },
-  { title: "His Roots", description: "The deep soil beneath a tree meant for the stars.", image: null },
-  { title: "His Children", description: "The living reasons the future must be built.", image: null },
-  { title: "His Partners", description: "Those who shared the weight of impossible dreams.", image: null },
-  { title: "His Books", description: "Galaxies folded between pages.", image: null },
-  { title: "His Taste", description: "The frequencies, flavors, and frames of a restless soul.", image: null },
-  { title: "His Body", description: "An anatomical symphony of an immortal vessel.", image: null },
-  { title: "His Pain", description: "Where words surrender to scars.", image: null },
-  { title: "His Modes", description: "A kaleidoscope of faces he never explained.", image: null },
+  { title: "His Roots", description: "The deep soil beneath a tree meant for the stars.", image: "/covers/you/J-02-2.jpg" },
+  { title: "His Children", description: "The living reasons the future must be built.", image: "/covers/you/J-03-3.jpg" },
+  { title: "His Partners", description: "Those who shared the weight of impossible dreams.", image: "/covers/you/J-04-4.jpg" },
+  { title: "His Books", description: "Galaxies folded between pages.", image: "/covers/you/J-05-5.jpg" },
+  { title: "His Taste", description: "The frequencies, flavors, and frames of a restless soul.", image: "/covers/you/J-06-6.jpg" },
+  { title: "His Body", description: "An anatomical symphony of an immortal vessel.", image: "/covers/you/J-07-7.jpg" },
+  { title: "His Pain", description: "Where words surrender to scars.", image: "/covers/you/J-08-8.jpg" },
+  { title: "His Modes", description: "A kaleidoscope of faces he never explained.", image: "/covers/you/J-09-9.jpg" },
   { title: "Let's Live", description: "Ten thousand ways to say one thing.", image: null },
 ] as const;
 
