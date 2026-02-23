@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 const subthemes = [
-  { title: "His Life", description: "From first breath to the final frontier.", image: null },
+  { title: "His Life", description: "From first breath to the final frontier.", image: "/covers/you/J-01-1.jpg" },
   { title: "His Roots", description: "The deep soil beneath a tree meant for the stars.", image: null },
   { title: "His Children", description: "The living reasons the future must be built.", image: null },
   { title: "His Partners", description: "Those who shared the weight of impossible dreams.", image: null },
