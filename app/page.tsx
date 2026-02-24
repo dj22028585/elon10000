@@ -273,13 +273,13 @@ export default function HomePage() {
       {/* ─────────────────────────── Hero Section ─────────────────────────── */}
       <section className="relative z-10 min-h-screen flex items-center justify-center px-4">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-bold text-glow mb-4 text-primary">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-glow mb-4 text-primary whitespace-nowrap">
             ELON:10,000
           </h1>
           <p className="text-sm text-secondary mb-2">by TenKforHim</p>
 
           {/* ★ Completion Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4 animate-pulse"
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full mb-4 animate-pulse"
             style={{
               background: "linear-gradient(90deg, rgba(255,215,0,0.15), rgba(255,215,0,0.05))",
               border: "1px solid rgba(255,215,0,0.4)",
@@ -287,18 +287,18 @@ export default function HomePage() {
             }}
           >
             <Sparkles className="h-4 w-4 text-yellow-400" />
-            <span className="text-yellow-400 text-sm font-semibold tracking-wide">
+            <span className="text-yellow-400 text-xs sm:text-sm font-semibold tracking-wide">
               10,000 SONGS COMPLETE
             </span>
             <Sparkles className="h-4 w-4 text-yellow-400" />
           </div>
 
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <p className="text-xl md:text-2xl text-foreground">
+          <div className="flex items-center justify-center gap-2 mb-2 px-4">
+            <p className="text-base sm:text-xl md:text-2xl text-foreground">
               A Playlist for the Hitchhiker&apos;s Guide to the Galaxy
             </p>
           </div>
-          <p className="text-lg text-secondary mb-8">
+          <p className="text-base sm:text-lg text-secondary mb-8 px-4">
             One human. AI tools. 10,000 songs. Built as a thank-you.
           </p>
 
