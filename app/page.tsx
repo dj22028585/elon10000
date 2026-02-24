@@ -1,14 +1,22 @@
 "use client";
 
 import React, { useState, useEffect, useRef, ReactNode } from "react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink, Play, Music, Rocket, CheckCircle2, Sparkles } from "lucide-react";
+import {
+  ExternalLink,
+  Play,
+  Pause,
+  Music,
+  CheckCircle2,
+  Sparkles,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
 import CosmicBackground from "@/components/cosmic-background";
 import SocialIcons from "@/components/social-icons";
 
-/* ───────────────────────────── Confetti Effect ───────────────────────────── */
+/* ═══════════════════════ Confetti (Platinum / Cyan) ══════════════════════ */
 function Confetti() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -21,7 +29,10 @@ function Confetti() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const colors = ["#FFD700", "#00BFFF", "#FF4500", "#22C55E", "#FF69B4", "#8A0303", "#FFFFFF"];
+    const colors = [
+      "#E0E7FF", "#00BFFF", "#1E90FF", "#B0C4DE",
+      "#FFFFFF", "#87CEEB", "#C0D8F0", "#A0C4E8",
+    ];
     const particles: {
       x: number; y: number; w: number; h: number;
       color: string; vx: number; vy: number;
@@ -52,16 +63,15 @@ function Confetti() {
         return;
       }
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
       const fadeStart = maxFrames * 0.6;
+
       particles.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;
         p.vy += 0.05;
         p.rotation += p.rotSpeed;
-        if (frame > fadeStart) {
+        if (frame > fadeStart)
           p.opacity = Math.max(0, 1 - (frame - fadeStart) / (maxFrames - fadeStart));
-        }
 
         ctx.save();
         ctx.translate(p.x, p.y);
@@ -80,15 +90,10 @@ function Confetti() {
     return () => clearTimeout(timeout);
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 z-50 pointer-events-none"
-    />
-  );
+  return <canvas ref={canvasRef} className="fixed inset-0 z-50 pointer-events-none" />;
 }
 
-/* ───────────────────────── Count-up Animation Hook ───────────────────────── */
+/* ══════════════════════ Count-up Animation Hook ═════════════════════════ */
 function useCountUp(target: number, duration = 2500) {
   const [value, setValue] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
@@ -119,61 +124,10 @@ function useCountUp(target: number, duration = 2500) {
   return { value, ref };
 }
 
-/* ──────────────────── Collapsible SoundCloud Player ──────────────────────── */
-function CollapsiblePlayer({
-  url,
-  open,
-  onToggle,
-  accent = "#00BFFF",
-  icon = "▶",
-}: {
-  url: string;
-  open: boolean;
-  onToggle: () => void;
-  accent?: string;
-  icon?: ReactNode;
-}) {
-  const src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(
-    url
-  )}&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false`;
-
-  return (
-    <div className="rounded-lg bg-input/60 p-3">
-      <button
-        type="button"
-        onClick={onToggle}
-        className="w-full flex items-center justify-center gap-2 cursor-pointer px-3 py-2 rounded-md font-medium"
-        aria-expanded={open}
-        style={{
-          background: `linear-gradient(90deg, ${accent}33, ${accent}55)`,
-          boxShadow: `0 0 12px ${accent}55, inset 0 0 0 1px ${accent}66`,
-        }}
-      >
-        <span className="text-base leading-none">{icon}</span>
-        <span>Play Sample</span>
-      </button>
-
-      {open && (
-        <div className="mt-3 rounded-lg overflow-hidden">
-          <iframe
-            title="SoundCloud player"
-            width="100%"
-            height="166"
-            scrolling="no"
-            frameBorder="no"
-            allow="autoplay"
-            loading="lazy"
-            src={src}
-          />
-        </div>
-      )}
-    </div>
-  );
-}
-
-/* ═══════════════════════════════ Main Page ════════════════════════════════ */
+/* ════════════════════════════ Main Page ═════════════════════════════════ */
 export default function HomePage() {
   const [showConfetti, setShowConfetti] = useState(true);
+  const [openPlayer, setOpenPlayer] = useState<string | null>(null);
   const counter = useCountUp(10000, 3000);
 
   useEffect(() => {
@@ -181,14 +135,14 @@ export default function HomePage() {
     return () => clearTimeout(timer);
   }, []);
 
-  /** 10 Planets */
+  /** 10 Planets — with real SoundCloud playlist URLs */
   const planets = [
     {
       id: "SUN",
       title: "SUN (ROCK)",
       subtitle: "Explosive rock born from the Sun.",
       color: "#FF4500",
-      url: "https://soundcloud.com/tenkforhim",
+      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-sun-01-ignition",
       href: "/sun",
     },
     {
@@ -196,7 +150,7 @@ export default function HomePage() {
       title: "MER (HIP-HOP)",
       subtitle: "Speed. Swagger. Mercury flow.",
       color: "#00BFFF",
-      url: "https://soundcloud.com/tenkforhim",
+      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-mer-01-launchpad",
       href: "/mer",
     },
     {
@@ -204,7 +158,7 @@ export default function HomePage() {
       title: "VEN (R&B)",
       subtitle: "Velvet R&B under Venus lights.",
       color: "#800080",
-      url: "https://soundcloud.com/tenkforhim",
+      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-ven-01-justine",
       href: "/ven",
     },
     {
@@ -212,7 +166,7 @@ export default function HomePage() {
       title: "EAR (WORLD)",
       subtitle: "Earth's rhythm, one heartbeat.",
       color: "#22C55E",
-      url: "https://soundcloud.com/tenkforhim",
+      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-ear-01-cradle",
       href: "/ear",
     },
     {
@@ -220,7 +174,7 @@ export default function HomePage() {
       title: "AI (EDM)",
       subtitle: "EDM forged by AI's pulse.",
       color: "#C0C0C0",
-      url: "https://soundcloud.com/tenkforhim",
+      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-ai-01-doge",
       href: "/ai",
     },
     {
@@ -228,7 +182,7 @@ export default function HomePage() {
       title: "MAR (K-POP)",
       subtitle: "Red-hot K-Pop ignition.",
       color: "#FF69B4",
-      url: "https://soundcloud.com/tenkforhim",
+      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-mar-01-my-little-hitchhiker",
       href: "/mar",
     },
     {
@@ -236,7 +190,7 @@ export default function HomePage() {
       title: "JUP (CLASSICAL)",
       subtitle: "Orchestral power of Jupiter.",
       color: "#FFD700",
-      url: "https://soundcloud.com/tenkforhim",
+      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-jup-01-dungeons-musk",
       href: "/jup",
     },
     {
@@ -244,7 +198,7 @@ export default function HomePage() {
       title: "SAT (JAZZ)",
       subtitle: "Saturn's rings in smooth jazz.",
       color: "#40E0D0",
-      url: "https://soundcloud.com/tenkforhim",
+      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-sat-01-curiosity",
       href: "/sat",
     },
     {
@@ -252,7 +206,7 @@ export default function HomePage() {
       title: "COS (HOUSE)",
       subtitle: "House beats across the cosmos.",
       color: "#0B2D5C",
-      url: "https://soundcloud.com/tenkforhim",
+      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-cos-01-zip2",
       href: "/cos",
     },
     {
@@ -260,7 +214,7 @@ export default function HomePage() {
       title: "YOU",
       subtitle: "Ten thousand ways to say one thing.",
       color: "#8A0303",
-      url: "https://soundcloud.com/tenkforhim",
+      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-you-01-his-life",
       href: "/you",
     },
   ];
@@ -270,36 +224,39 @@ export default function HomePage() {
       <CosmicBackground />
       {showConfetti && <Confetti />}
 
-      {/* ─────────────────────────── Hero Section ─────────────────────────── */}
+      {/* ═══════════════════════ Hero Section ═══════════════════════════════ */}
       <section className="relative z-10 min-h-screen flex items-center justify-center px-4">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-glow mb-4 text-primary whitespace-nowrap">
             ELON:10,000
           </h1>
-          <p className="text-sm text-secondary mb-2">by TenKforHim</p>
+          <p className="text-sm text-secondary mb-3">by TenKforHim</p>
 
-          {/* ★ Completion Badge */}
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full mb-4 animate-pulse"
+          {/* Completion Badge — Platinum / Cyan */}
+          <div
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full mb-5"
             style={{
-              background: "linear-gradient(90deg, rgba(255,215,0,0.15), rgba(255,215,0,0.05))",
-              border: "1px solid rgba(255,215,0,0.4)",
-              boxShadow: "0 0 20px rgba(255,215,0,0.2)",
+              background:
+                "linear-gradient(90deg, rgba(0,191,255,0.12), rgba(255,255,255,0.06))",
+              border: "1px solid rgba(0,191,255,0.35)",
+              boxShadow: "0 0 24px rgba(0,191,255,0.15)",
+              animation: "badge-glow 3s ease-in-out infinite",
             }}
           >
-            <Sparkles className="h-4 w-4 text-yellow-400" />
-            <span className="text-yellow-400 text-xs sm:text-sm font-semibold tracking-wide">
+            <Sparkles className="h-4 w-4 text-cyan-300" />
+            <span className="text-cyan-200 text-xs sm:text-sm font-semibold tracking-widest">
               10,000 SONGS COMPLETE
             </span>
-            <Sparkles className="h-4 w-4 text-yellow-400" />
+            <Sparkles className="h-4 w-4 text-cyan-300" />
           </div>
 
-          <div className="flex items-center justify-center gap-2 mb-2 px-4">
+          <div className="mb-2 px-4">
             <p className="text-base sm:text-xl md:text-2xl text-foreground">
               A Playlist for the Hitchhiker&apos;s Guide to the Galaxy
             </p>
           </div>
           <p className="text-base sm:text-lg text-secondary mb-8 px-4">
-            One human. AI tools. 10,000 songs. Built as a thank-you.
+            10,000 songs for one man. Built as a thank-you.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -336,7 +293,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ────────────────────── Project Progress (Songs Only) ────────────── */}
+      {/* ═══════════════════ Project Progress (Songs Only) ════════════════ */}
       <section id="progress" className="relative z-10 py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-glow">
@@ -346,15 +303,27 @@ export default function HomePage() {
           <Card className="bg-card/50 backdrop-blur-sm border-border pulse-glow">
             <CardContent className="p-8">
               <div className="flex items-center gap-4 mb-6 justify-center">
-                <CheckCircle2 className="h-8 w-8 text-yellow-400" />
-                <h3 className="text-2xl font-bold" style={{ color: "#FFD700", textShadow: "0 0 15px rgba(255,215,0,0.5)" }}>
+                <CheckCircle2 className="h-8 w-8 text-cyan-300" />
+                <h3
+                  className="text-2xl font-bold"
+                  style={{
+                    color: "#E0E7FF",
+                    textShadow: "0 0 15px rgba(0,191,255,0.4)",
+                  }}
+                >
                   Songs
                 </h3>
               </div>
               <div className="space-y-4 max-w-lg mx-auto" ref={counter.ref}>
                 <div className="flex justify-between text-xl">
                   <span>{counter.value.toLocaleString()} / 10,000</span>
-                  <span className="font-bold" style={{ color: "#FFD700", textShadow: "0 0 10px rgba(255,215,0,0.5)" }}>
+                  <span
+                    className="font-bold"
+                    style={{
+                      color: "#E0E7FF",
+                      textShadow: "0 0 10px rgba(0,191,255,0.4)",
+                    }}
+                  >
                     (100%)
                   </span>
                 </div>
@@ -363,14 +332,16 @@ export default function HomePage() {
                     className="h-4 rounded-full relative transition-all duration-300"
                     style={{
                       width: "100%",
-                      background: "linear-gradient(90deg, #B8860B, #FFD700, #FFF8DC, #FFD700, #B8860B)",
-                      boxShadow: "0 0 16px rgba(255,215,0,0.5), 0 0 40px rgba(255,215,0,0.2)",
+                      background:
+                        "linear-gradient(90deg, #1a3a5c, #00BFFF, #E0E7FF, #00BFFF, #1a3a5c)",
+                      boxShadow:
+                        "0 0 16px rgba(0,191,255,0.4), 0 0 40px rgba(0,191,255,0.15)",
                     }}
                   >
-                    <CheckCircle2 className="absolute -right-2 -top-1 h-6 w-6 text-yellow-400 drop-shadow-[0_0_6px_rgba(255,215,0,0.8)]" />
+                    <CheckCircle2 className="absolute -right-2 -top-1 h-6 w-6 text-cyan-300 drop-shadow-[0_0_6px_rgba(0,191,255,0.7)]" />
                   </div>
                 </div>
-                <p className="text-center text-sm text-yellow-400/70 mt-2">
+                <p className="text-center text-sm text-cyan-300/60 mt-2">
                   ✦ All 10,000 songs across 10 planets — complete. ✦
                 </p>
               </div>
@@ -379,88 +350,122 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ──────────────────────── Featured Samples ────────────────────────── */}
+      {/* ═══════════════════ Featured Samples (Playable) ═════════════════ */}
       <section className="relative z-10 py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-glow">
+          <h2 className="text-4xl font-bold text-center mb-4 text-glow">
             Featured Samples
           </h2>
+          <p className="text-center text-secondary text-sm mb-12">
+            Tap any planet to listen.
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {planets.map((p) => (
-              <div
-                key={p.id}
-                className="group relative rounded-xl p-6 transition-all duration-300
-                           bg-gradient-to-br from-black/50 via-black/30 to-black/10
-                           hover:scale-[1.04] hover:-translate-y-1
-                           shadow-[0_0_20px_-5px_rgba(255,255,255,0.2)] overflow-hidden"
-              >
-                {/* Outer neon border */}
-                <div
-                  className="absolute inset-0 rounded-xl opacity-40 group-hover:opacity-100 transition-all duration-300 blur-md"
-                  style={{
-                    background: `linear-gradient(135deg, ${p.color}44, transparent 60%)`,
-                    boxShadow: `0 0 25px ${p.color}55`,
-                  }}
-                />
+            {planets.map((p) => {
+              const isOpen = openPlayer === p.id;
+              const scSrc = `https://w.soundcloud.com/player/?url=${encodeURIComponent(
+                p.scUrl
+              )}&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&color=${p.color.replace(
+                "#",
+                ""
+              )}`;
 
-                {/* Content */}
-                <div className="relative z-10 flex flex-col justify-between h-full">
-                  <div>
-                    <h3
-                      className="font-bold tracking-tight leading-tight whitespace-nowrap mb-3"
+              return (
+                <div
+                  key={p.id}
+                  className="group relative rounded-xl p-5 transition-all duration-300
+                             bg-gradient-to-br from-black/50 via-black/30 to-black/10
+                             hover:scale-[1.03] hover:-translate-y-1
+                             shadow-[0_0_20px_-5px_rgba(255,255,255,0.15)] overflow-hidden"
+                >
+                  {/* Neon glow */}
+                  <div
+                    className="absolute inset-0 rounded-xl opacity-30 group-hover:opacity-80 transition-all duration-300 blur-md"
+                    style={{
+                      background: `linear-gradient(135deg, ${p.color}44, transparent 60%)`,
+                      boxShadow: `0 0 25px ${p.color}44`,
+                    }}
+                  />
+
+                  <div className="relative z-10 flex flex-col justify-between h-full">
+                    <div>
+                      <h3
+                        className="font-bold tracking-tight leading-tight whitespace-nowrap mb-2"
+                        style={{
+                          color: p.color,
+                          textShadow: `0 0 10px ${p.color}AA`,
+                          fontSize: "clamp(16px, 1.6vw, 20px)",
+                        }}
+                      >
+                        {p.title}
+                      </h3>
+                      <p className="text-sm text-white/70 leading-relaxed mb-4">
+                        {p.subtitle}
+                      </p>
+                    </div>
+
+                    {/* Play / Collapse toggle */}
+                    <button
+                      onClick={() =>
+                        setOpenPlayer(isOpen ? null : p.id)
+                      }
+                      className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-md
+                                 font-semibold text-sm transition-all duration-300
+                                 bg-black/40 border border-white/15"
                       style={{
                         color: p.color,
-                        textShadow: `0 0 10px ${p.color}AA`,
-                        fontSize: "clamp(16px, 1.6vw, 20px)",
+                        boxShadow: isOpen
+                          ? `0 0 20px ${p.color}66, inset 0 0 8px ${p.color}88`
+                          : `inset 0 0 12px ${p.color}44`,
                       }}
                     >
-                      {p.title}
-                    </h3>
+                      {isOpen ? (
+                        <>
+                          <Pause className="h-4 w-4" />
+                          Close
+                        </>
+                      ) : (
+                        <>
+                          <Play className="h-4 w-4" />
+                          Listen
+                        </>
+                      )}
+                    </button>
 
-                    <p className="text-sm text-white/80 leading-relaxed mb-6">
-                      {p.subtitle}
-                    </p>
+                    {/* Embedded SoundCloud player */}
+                    {isOpen && (
+                      <div className="mt-3 rounded-lg overflow-hidden animate-in fade-in slide-in-from-top-2 duration-300">
+                        <iframe
+                          title={`${p.id} player`}
+                          width="100%"
+                          height="166"
+                          scrolling="no"
+                          frameBorder="no"
+                          allow="autoplay"
+                          loading="lazy"
+                          src={scSrc}
+                        />
+                      </div>
+                    )}
                   </div>
-
-                  <button
-                    onClick={() => (window.location.href = p.href)}
-                    className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-md
-                               font-semibold transition-all duration-300
-                               bg-black/40 border border-white/20
-                               group-hover:shadow-[0_0_18px_currentColor]"
-                    style={{
-                      color: p.color,
-                      boxShadow: `inset 0 0 12px ${p.color}55`,
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = `linear-gradient(90deg, ${p.color}33, ${p.color}55)`;
-                      e.currentTarget.style.boxShadow = `0 0 25px ${p.color}77, inset 0 0 8px ${p.color}AA`;
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = `rgba(0,0,0,0.4)`;
-                      e.currentTarget.style.boxShadow = `inset 0 0 12px ${p.color}55`;
-                    }}
-                  >
-                    <Play className="h-5 w-5" />
-                    Play Sample
-                  </button>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* ─────────────────────── Find Us Everywhere ───────────────────────── */}
+      {/* ═══════════════════════ Find Us Everywhere ══════════════════════ */}
       <section className="relative z-10 py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-12 text-glow">Find Us Everywhere</h2>
+          <h2 className="text-4xl font-bold mb-12 text-glow">
+            Find Us Everywhere
+          </h2>
           <SocialIcons />
         </div>
       </section>
 
-      {/* ──────────────────────────── About ────────────────────────────────── */}
+      {/* ══════════════════════════ About ════════════════════════════════ */}
       <section className="relative z-10 py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <Card className="bg-card/50 backdrop-blur-sm border-border pulse-glow">
@@ -470,9 +475,9 @@ export default function HomePage() {
               </h2>
               <div className="prose prose-invert max-w-none text-center">
                 <p className="text-lg leading-relaxed">
-                  ELON:10,000 is an AI+Human collaboration — 10,000 songs across
-                  ten planetary themes, dedicated to Elon Musk and the era he
-                  helped build.
+                  10,000 songs across ten planetary themes — dedicated to Elon
+                  Musk and the era he helped build. One person&apos;s way of saying
+                  thank you, at an impossible scale.
                 </p>
               </div>
             </CardContent>
@@ -480,7 +485,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ──────────────────────────── Footer ───────────────────────────────── */}
+      {/* ══════════════════════════ Footer ═══════════════════════════════ */}
       <footer className="relative z-10 py-8 px-4 border-t border-border">
         <div className="max-w-6xl mx-auto text-center">
           <div className="h-px bg-gradient-to-r from-transparent via-primary to-transparent mb-4" />
@@ -489,6 +494,19 @@ export default function HomePage() {
           </p>
         </div>
       </footer>
+
+      {/* ══════════════════ Badge Glow Keyframes ════════════════════════ */}
+      <style jsx global>{`
+        @keyframes badge-glow {
+          0%,
+          100% {
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.12);
+          }
+          50% {
+            box-shadow: 0 0 32px rgba(0, 191, 255, 0.25);
+          }
+        }
+      `}</style>
     </div>
   );
 }
