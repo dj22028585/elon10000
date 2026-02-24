@@ -6,12 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   ExternalLink,
   Play,
-  Pause,
   Music,
   CheckCircle2,
   Sparkles,
-  ChevronDown,
-  ChevronUp,
 } from "lucide-react";
 import CosmicBackground from "@/components/cosmic-background";
 import SocialIcons from "@/components/social-icons";
@@ -127,7 +124,6 @@ function useCountUp(target: number, duration = 2500) {
 /* ════════════════════════════ Main Page ═════════════════════════════════ */
 export default function HomePage() {
   const [showConfetti, setShowConfetti] = useState(true);
-  const [openPlayer, setOpenPlayer] = useState<string | null>(null);
   const counter = useCountUp(10000, 3000);
 
   useEffect(() => {
@@ -135,88 +131,18 @@ export default function HomePage() {
     return () => clearTimeout(timer);
   }, []);
 
-  /** 10 Planets — with real SoundCloud playlist URLs */
+  /** 10 Planets */
   const planets = [
-    {
-      id: "SUN",
-      title: "SUN (ROCK)",
-      subtitle: "Explosive rock born from the Sun.",
-      color: "#FF4500",
-      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-sun-01-ignition",
-      href: "/sun",
-    },
-    {
-      id: "MER",
-      title: "MER (HIP-HOP)",
-      subtitle: "Speed. Swagger. Mercury flow.",
-      color: "#00BFFF",
-      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-mer-01-launchpad",
-      href: "/mer",
-    },
-    {
-      id: "VEN",
-      title: "VEN (R&B)",
-      subtitle: "Velvet R&B under Venus lights.",
-      color: "#800080",
-      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-ven-01-justine",
-      href: "/ven",
-    },
-    {
-      id: "EAR",
-      title: "EAR (WORLD)",
-      subtitle: "Earth's rhythm, one heartbeat.",
-      color: "#22C55E",
-      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-ear-01-cradle",
-      href: "/ear",
-    },
-    {
-      id: "AI",
-      title: "AI (EDM)",
-      subtitle: "EDM forged by AI's pulse.",
-      color: "#C0C0C0",
-      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-ai-01-doge",
-      href: "/ai",
-    },
-    {
-      id: "MAR",
-      title: "MAR (K-POP)",
-      subtitle: "Red-hot K-Pop ignition.",
-      color: "#FF69B4",
-      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-mar-01-my-little-hitchhiker",
-      href: "/mar",
-    },
-    {
-      id: "JUP",
-      title: "JUP (CLASSICAL)",
-      subtitle: "Orchestral power of Jupiter.",
-      color: "#FFD700",
-      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-jup-01-dungeons-musk",
-      href: "/jup",
-    },
-    {
-      id: "SAT",
-      title: "SAT (JAZZ)",
-      subtitle: "Saturn's rings in smooth jazz.",
-      color: "#40E0D0",
-      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-sat-01-curiosity",
-      href: "/sat",
-    },
-    {
-      id: "COS",
-      title: "COS (HOUSE)",
-      subtitle: "House beats across the cosmos.",
-      color: "#0B2D5C",
-      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-cos-01-zip2",
-      href: "/cos",
-    },
-    {
-      id: "YOU",
-      title: "YOU",
-      subtitle: "Ten thousand ways to say one thing.",
-      color: "#8A0303",
-      scUrl: "https://soundcloud.com/tenkforhim/sets/elon-you-01-his-life",
-      href: "/you",
-    },
+    { id: "SUN", title: "SUN (ROCK)", color: "#FF4500", href: "/sun" },
+    { id: "MER", title: "MER (HIP-HOP)", color: "#00BFFF", href: "/mer" },
+    { id: "VEN", title: "VEN (R&B)", color: "#800080", href: "/ven" },
+    { id: "EAR", title: "EAR (WORLD)", color: "#22C55E", href: "/ear" },
+    { id: "AI", title: "AI (EDM)", color: "#C0C0C0", href: "/ai" },
+    { id: "MAR", title: "MAR (K-POP)", color: "#FF69B4", href: "/mar" },
+    { id: "JUP", title: "JUP (CLASSICAL)", color: "#FFD700", href: "/jup" },
+    { id: "SAT", title: "SAT (JAZZ)", color: "#40E0D0", href: "/sat" },
+    { id: "COS", title: "COS (HOUSE)", color: "#0B2D5C", href: "/cos" },
+    { id: "YOU", title: "YOU", color: "#8A0303", href: "/you" },
   ];
 
   return (
@@ -350,107 +276,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════ Featured Samples (Playable) ═════════════════ */}
+      {/* ═══════════════════ Featured Samples ══════════════════════════ */}
       <section className="relative z-10 py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 text-glow">
+          <h2 className="text-4xl font-bold text-center mb-12 text-glow">
             Featured Samples
           </h2>
-          <p className="text-center text-secondary text-sm mb-12">
-            Tap any planet to listen.
-          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {planets.map((p) => {
-              const isOpen = openPlayer === p.id;
-              const scSrc = `https://w.soundcloud.com/player/?url=${encodeURIComponent(
-                p.scUrl
-              )}&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&color=${p.color.replace(
-                "#",
-                ""
-              )}`;
-
-              return (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+            {planets.map((p) => (
+              <button
+                key={p.id}
+                onClick={() => (window.location.href = p.href)}
+                className="group relative rounded-xl p-5 sm:p-6 transition-all duration-300
+                           bg-gradient-to-br from-black/50 via-black/30 to-black/10
+                           hover:scale-[1.05] hover:-translate-y-1
+                           shadow-[0_0_20px_-5px_rgba(255,255,255,0.15)] overflow-hidden
+                           cursor-pointer text-center"
+              >
+                {/* Neon glow */}
                 <div
-                  key={p.id}
-                  className="group relative rounded-xl p-5 transition-all duration-300
-                             bg-gradient-to-br from-black/50 via-black/30 to-black/10
-                             hover:scale-[1.03] hover:-translate-y-1
-                             shadow-[0_0_20px_-5px_rgba(255,255,255,0.15)] overflow-hidden"
-                >
-                  {/* Neon glow */}
-                  <div
-                    className="absolute inset-0 rounded-xl opacity-30 group-hover:opacity-80 transition-all duration-300 blur-md"
+                  className="absolute inset-0 rounded-xl opacity-30 group-hover:opacity-80 transition-all duration-300 blur-md"
+                  style={{
+                    background: `linear-gradient(135deg, ${p.color}44, transparent 60%)`,
+                    boxShadow: `0 0 25px ${p.color}44`,
+                  }}
+                />
+
+                <div className="relative z-10">
+                  <h3
+                    className="font-bold tracking-tight leading-tight"
                     style={{
-                      background: `linear-gradient(135deg, ${p.color}44, transparent 60%)`,
-                      boxShadow: `0 0 25px ${p.color}44`,
+                      color: p.color,
+                      textShadow: `0 0 12px ${p.color}AA`,
+                      fontSize: "clamp(14px, 1.6vw, 20px)",
                     }}
-                  />
-
-                  <div className="relative z-10 flex flex-col justify-between h-full">
-                    <div>
-                      <h3
-                        className="font-bold tracking-tight leading-tight whitespace-nowrap mb-2"
-                        style={{
-                          color: p.color,
-                          textShadow: `0 0 10px ${p.color}AA`,
-                          fontSize: "clamp(16px, 1.6vw, 20px)",
-                        }}
-                      >
-                        {p.title}
-                      </h3>
-                      <p className="text-sm text-white/70 leading-relaxed mb-4">
-                        {p.subtitle}
-                      </p>
-                    </div>
-
-                    {/* Play / Collapse toggle */}
-                    <button
-                      onClick={() =>
-                        setOpenPlayer(isOpen ? null : p.id)
-                      }
-                      className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-md
-                                 font-semibold text-sm transition-all duration-300
-                                 bg-black/40 border border-white/15"
-                      style={{
-                        color: p.color,
-                        boxShadow: isOpen
-                          ? `0 0 20px ${p.color}66, inset 0 0 8px ${p.color}88`
-                          : `inset 0 0 12px ${p.color}44`,
-                      }}
-                    >
-                      {isOpen ? (
-                        <>
-                          <Pause className="h-4 w-4" />
-                          Close
-                        </>
-                      ) : (
-                        <>
-                          <Play className="h-4 w-4" />
-                          Listen
-                        </>
-                      )}
-                    </button>
-
-                    {/* Embedded SoundCloud player */}
-                    {isOpen && (
-                      <div className="mt-3 rounded-lg overflow-hidden animate-in fade-in slide-in-from-top-2 duration-300">
-                        <iframe
-                          title={`${p.id} player`}
-                          width="100%"
-                          height="166"
-                          scrolling="no"
-                          frameBorder="no"
-                          allow="autoplay"
-                          loading="lazy"
-                          src={scSrc}
-                        />
-                      </div>
-                    )}
-                  </div>
+                  >
+                    {p.title}
+                  </h3>
                 </div>
-              );
-            })}
+              </button>
+            ))}
           </div>
         </div>
       </section>
