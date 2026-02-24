@@ -178,7 +178,7 @@ export default function HomePage() {
 
           <div className="mb-2 px-4">
             <p className="text-base sm:text-xl md:text-2xl text-foreground">
-              A Playlist for the Hitchhiker&apos;s Guide to the Galaxy
+              The Hitchhiker&apos;s Playlist to the Galaxy
             </p>
           </div>
           <p className="text-base sm:text-lg text-secondary mb-8 px-4">
@@ -341,9 +341,8 @@ export default function HomePage() {
               </h2>
               <div className="prose prose-invert max-w-none text-center">
                 <p className="text-lg leading-relaxed">
-                  10,000 songs across ten planetary themes — dedicated to Elon
-                  Musk and the era he helped build. One person&apos;s way of saying
-                  thank you, at an impossible scale.
+                  Ten planets. Ten thousand songs. One thank-you — dedicated to
+                  Elon Musk and the era he helped build.
                 </p>
               </div>
             </CardContent>
